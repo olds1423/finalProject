@@ -1,6 +1,6 @@
 # finalProject
 
-Name for the project: LeaseGeese RentIntent MentalRental
+Name for the project: MentalRental
 
 Three pages;
 
@@ -13,7 +13,12 @@ Setup page; capturing user inputs i.e. rent + $, water + $
 
 HTML
 - Top Navigation (right side non working login)
-- Main form
+- roommates Form  - (displays previous roommates from local storage)
+  - List of current roommates
+  - section to add a new roommate
+
+- bill form
+
   - all bills and items in radio buttons
   - Clear, new (i.e. bill), remove, Refresh
 - undecided amount of canvas items
@@ -30,16 +35,28 @@ APP.js
 - event listener Clear
 - event listener new
 - event listener Remove
-  - selects 
+  - selects
 - event listener Refresh
-  - run bills, totals out the amount for the month object
-  -
+  - run bills,
+  - creates a month of billing based on the form items
 
 
 Grand view/past months/variance in bills
 
 
+bill constructor
+  Total of the bill
+  Name of the bill
+  Frequency of the bill (not required)
+
+
+
 Minimum Viable Product
+
+Sections of graphs
+
+
+
 User Stories:
 •	As a user I want to heading that effectively communicates the purpose of this web page.
 •	As a user I want to be shown a table and/or chart displaying the amount owed per person and the breakdown of all bills/expenses
@@ -72,6 +89,12 @@ User Stories
 •	As a developer I need to store votes in respective object properties and increment them up when a vote is cast by a roommate.
 -
 
+adding flexibility to the graph page, displaying
+adding percentages per person
+
+
+
+
 
 Git Work-Flow
 
@@ -80,10 +103,25 @@ Git Work-Flow
 
 2.	One of the group members should skim the code in the pull request and if there are no errors, accept and merge it
 
-a)	Commit changes to your working branch	// git commit -m <useful message>
+  a)	Commit changes to your working branch	// git commit -m <useful message>
 
-b)	Update local master				 //git pull origin master
+  b)	Update local master				 //git pull origin master
 
-c)	Update your branch with changes in master	//git checkout <branch>, git merge master
+  c)	Update your branch with changes in master	//git checkout <branch>, git merge master
 
-d)	Handle merge conflicts (if any)			//between the >>>>>>>>> and HEAD flags
+  d)	Handle merge conflicts (if any)			//between the >>>>>>>>> and HEAD flags
+
+3. Push working code to gh-pages
+
+Protocol for working at home
+  - Confirm with the group at least one day ahead of time you wont be meeting
+  - Confirm via slack that a task isnt being worked on already
+  - Record which waffle tasks you completed in group slack for the day
+
+
+
+  App
+
+  Displays the graphs
+    We need the name of the bill objects we are pulling
+    The amount of each bill
