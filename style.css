@@ -42,6 +42,9 @@ canvas{}
 label{
 	margin: 5px;
 	font-size: 20px;
+	color: white;
+	padding: 2px;
+
 }
 input{
 	background-color: rgba(103, 35, 180, 1);
@@ -71,8 +74,21 @@ select{
 
 }
 
-ul{}
-li{}
+ul{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+li{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+
+}
 h1{}
 h2{}
 h3{}
@@ -84,7 +100,9 @@ a{
 a:hover{
 	color: rgba(100, 255, 50, 1);;
 }
-#connect{}
+#connect{
+	font-size: 20px;
+}
 #navbar{
 	display: flex;
 	flex-direction: row;
@@ -99,6 +117,14 @@ a:hover{
 	margin: 10px;
 	border-radius: 10px;
 }
+#login{
+	color: black;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+}
 #genInfo
 #pricing{}
 #updateHistory{}
@@ -106,6 +132,13 @@ a:hover{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+#inptTntTitle{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
 }
 #currentRoommates{
 
@@ -129,6 +162,7 @@ a:hover{
 	border-radius: 5px;
 }
 .submit{
+	background-color: rgba(180, 35, 35, 0.7);
 	font-size: 20px;
 	margin: 5px;
 	height: 30px;
@@ -146,8 +180,22 @@ a:hover{
 }
 #currentRoommates{}
 #roommateList{}
+#rmmtTitle{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
 #currentBills{}
 #billList{}
+#bllTitle{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
 #graphs{
 	width: 500px;
 	height: 200px;
