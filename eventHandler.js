@@ -27,18 +27,20 @@ function formSubmitFunction(event) {
 
 // trying to get the value of newRoomate into the list
 
-// function newRoommateEvent(event){
-//   event.preventDefault();
-//   var inputRoommate =
-//   var currentRoommateList = document.getElementById("roommateList");
-//   var child = document.createElement("li");
-//   child.textContent = event.target.value;
-//   currentRoommateList.appendChild(child);
-// }
+function newRoommateEvent(event){
+  event.preventDefault();
+  var inputRoommate = document.getElementById("newRoomate");
+  var currentRoommateList = document.getElementById("roommateList");
+  var child = document.createElement("li");
+  child.textContent = inputRoommate.value;
+  tracker.roommateNameArray.push(inputRoommate.value);
+  currentRoommateList.appendChild(child);
+  inputRoommate.value = "";
+}
 
 //LISTEN FOR EVENT AND RESPOND
 var nbnr = document.getElementById('nbnr');   //reference form
 nbnr.addEventListener('submit', formSubmitFunction);
 
-// var newRoommateButton = document.getElementById("nr");
-// newRoommateButton.addEventListener("click", newRoommateEvent);
+var newRoommateButton = document.getElementById("nr");
+newRoommateButton.addEventListener("click", newRoommateEvent);
