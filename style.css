@@ -1,5 +1,6 @@
 body{
-	background-image: url(assets/style/concrete-texture-dark.jpg);
+	background-image: url(assets/style/concrete-texture-virtical.jpg);
+	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -11,6 +12,8 @@ header{
 	justify-content: space-between;
 	background-color: rgba(255, 255, 255, .8);
 	border: 2px solid rgba(255, 50, 50, 1);
+	box-sizing: border-box;
+
 	width: 1000px;
 	height: 50px;
 	border-radius: 10px;
@@ -19,11 +22,18 @@ header{
 }
 main{
 	/*border: 2px solid rgba(255, 50, 50, 1);*/
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	background-color: rgba(50, 200, 255, .8);
+	border: 2px solid rgba(255, 50, 50, .8);
+	border-radius: 10px;
+	padding: 10px;
+	width: 1000px;
+	margin: 10px;
 
 	box-sizing: border-box;
-	padding: 20px;
-	margin: 10px;
-	border-radius: 10px;
 }
 article{}
 section{}
@@ -39,6 +49,8 @@ input{
 	height: 30px;
 	width: 250px;
 	border-radius: 5px;
+	font-size: 20px;
+
 }
 ul{}
 li{}
@@ -68,11 +80,15 @@ a{}
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: rgba(50, 200, 255, .8);
+	/*background-color: rgba(50, 200, 255, .8);
 	border: 2px solid rgba(255, 50, 50, .8);
 	border-radius: 10px;
 	padding: 10px;
 	width: 400px;
+	margin: 10px;*/
+}
+#currentRoommates{
+
 }
 #fields{
 	display: flex;
@@ -108,7 +124,13 @@ a{}
 #nb{
 	width: 100px;
 }
-#graphs{}
+#graphs{
+	width: 500px;
+	height: 200px;
+	margin: 10px;
+	background-color: rgba(255, 0, 0, 0.5);
+}
+#longTermGaphs{}
 #graph1{}
 #graph2{}
 #graph3{}
@@ -121,7 +143,6 @@ a{}
 
 
 
-/*To-Do: fix background*/
 
 
 /*end*/
