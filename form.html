@@ -33,7 +33,7 @@
 
 				<legend>Input Rent Data</legend> <br>
 
-				<fieldset>
+				<fieldset id="fields">
 					<label for="billName">Bill Name:</label>
 					<input type="text" name="billName" value="" >
 
@@ -50,7 +50,7 @@
 		      <input type="text" name="roommateName" value="" >
 
 					<label for="monthName">Month:</label>
-					<select name="monthName">
+					<select id="monthName" name="monthName">
 					<option value="january">January</option>
 					<option value="february">February</option>
 					<option value="march">March</option>
@@ -65,10 +65,10 @@
 					<option value="december">December</option>
 					</select>
 
-					<input id='nbnr' type="submit" value="New Bill with New Roommate">
-					<input id='nr' type="submit" value="New Roommate">
-					<input id='nb' type="submit" value="New Bill">
 				</fieldset>
+				<input class='submit' id='nbnr' type="submit" value="New Bill with New Roommate">
+				<input class='submit' id='nr' type="submit" value="New Roommate">
+				<input class='submit' id='nb' type="submit" value="New Bill">
 
 			</form>
 
