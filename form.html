@@ -33,6 +33,23 @@
 
 				<h2 id="inptTntTitle">Input Rent Data</h2> <br>
 
+				<label for="monthName">Month:</label>
+				<select id="monthName" name="monthName">
+					<option value="n/a">Select</option>
+					<option value="january">January</option>
+					<option value="february">February</option>
+					<option value="march">March</option>
+					<option value="april">April</option>
+					<option value="may">May</option>
+					<option value="june">June</option>
+					<option value="july">July</option>
+					<option value="august">August</option>
+					<option value="september">September</option>
+					<option value="october">October</option>
+					<option value="november">November</option>
+					<option value="december">December</option>
+				</select>
+
 					<label for="billName">Bill Name:</label>
 					<input id='billName' type="text" name="billName" value="" >
 
@@ -50,29 +67,10 @@
 					</select>
 
 
-
-					<label for="totalRent">Total Rent Due:</label>
-					<input type "number" name="totalRent" value="" min="0" >
-
 					<label for="roommateName">New Roommate:</label>
 		      <input id="newRoomate" type="text" name="roommateName" value="" >
 
-					<label for="monthName">Month:</label>
-					<select id="monthName" name="monthName">
-						<option value="n/a">Select</option>
-						<option value="january">January</option>
-						<option value="february">February</option>
-						<option value="march">March</option>
-						<option value="april">April</option>
-						<option value="may">May</option>
-						<option value="june">June</option>
-						<option value="july">July</option>
-						<option value="august">August</option>
-						<option value="september">September</option>
-						<option value="october">October</option>
-						<option value="november">November</option>
-						<option value="december">December</option>
-					</select>
+
 
 				<input class='submit' id='nbnr' type="submit" value="New Bill with New Roommate">
 				<input class='submit' id='nr' type="submit" value="New Roommate">
@@ -85,6 +83,11 @@
 				<ul id="roommateList">
 
 				</ul>
+
+				<select id='remRmmt' name="remRmmt">
+					<option value=''>Select</option>
+
+				</select>
 			</section>
 
 			<section id="currentBills">
@@ -92,6 +95,11 @@
 				<ul id="billList">
 
 				</ul>
+
+				<select id='remBill' name='remBill'>
+					<option value=''>Select</option>
+
+				</select>
 			</section>
 
 		</main>
