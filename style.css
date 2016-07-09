@@ -4,6 +4,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	font-family: 'Mitr', sans-serif;
 }
 header{
 	display: flex;
@@ -101,7 +102,21 @@ a:hover{
 	color: rgba(100, 255, 50, 1);;
 }
 #connect{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	font-size: 20px;
+	width: 100px;
+}
+#githubLink{
+	height: 35px;
+	width: 35px;
+
+}
+#github{
+	width: 35px;
+	height: 35px;
+
 }
 #navbar{
 	display: flex;
@@ -140,9 +155,7 @@ a:hover{
 	padding: 2px;
 	box-sizing: border-box;
 }
-#currentRoommates{
-
-}
+#currentRoommates{}
 #fields{
 	display: flex;
 	flex-direction: column;
@@ -181,7 +194,9 @@ a:hover{
 	width: 100px;
 }
 #currentRoommates{}
-#roommateList{}
+#roommateList{
+	list-style: none;
+}
 #rmmtTitle{
 	color: white;
 	margin: 5px;
@@ -190,7 +205,9 @@ a:hover{
 	box-sizing: border-box;
 }
 #currentBills{}
-#billList{}
+#billList{
+	list-style: none;
+}
 #bllTitle{
 	color: white;
 	margin: 5px;
