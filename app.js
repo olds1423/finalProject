@@ -1,13 +1,4 @@
-//starting the form JS
 
-// var form = document.getElementById('form');
-//
-// function handleFormSubmit() {
-//   if (true) {
-//
-//   }
-// }
-// //simplified graph
 
 var newArray = [25, 25, 25, 25];
 var otherArray = ['a', 'b', 'c', 'd'];
