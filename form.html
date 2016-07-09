@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Mental Rental - Add Information</title>
+		<link rel="stylesheet" href="style.css" charset="utf-8">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js">
+
+		</script>
+	</head>
+	<body>
+		<header>
+			<section id="connect">
+				<p>Connect:</p>
+			</section>
+
+			<!-- Title -->
+			<h1>Add/Update Information</h1>
+
+			<!-- login -->
+			<a id="login">Log In/ Register</a>
+		</header>
+
+		<nav id="navbar">
+
+			<a id="formLink" href="form.html">Add information</a>
+			<a id="statsLink" href="statistics.html">All Statistics</a>
+
+		</nav>
+
+		<main>
+			<form id='updateForm' action="form.html" method="post">
+				<!-- <h2>Month:</h2>
+				<input id='month' type="text" name="month" value="">
+
+				<h2>New Roommate:</h2>
+				<input id='roommateName' type="text" name="roommateName" value="">
+				<input id='newRoomate' type="button" name="newRoomate" value="New Roomate">
+
+
+				<h2>New Bill:</h2> -->
+					<!-- name -->
+				<!-- <label for="billName">Bill Name:</label>
+				<input id='billName' type="text" name="billName" value=""> -->
+					<!-- amount -->
+				<!-- <label for="billAmount">Bill Amount:</label>
+				<input id='billAmount' type="text" name="billAmount" value=""> -->
+
+					<!-- submit -->
+				<!-- <input id='newBill' type="submit" name="newBill" value="Add New Bill"> -->
+
+				<legend>Input Rent Data</legend> <br>
+
+				<fieldset>
+					<label for="billName">Bill Name:</label>
+					<input type="text" name="billName" value="" >
+
+					<label for="billAmount">Bill Amount:</label>
+					<input type="number" name="billAmount" value="" min="0" >
+
+					<label for="billFrequency">Bill Frequency:</label>
+					<input type "number" name="billFrequency" value="" min="0" >
+					<br>
+					<label for="totalRent">Total Rent Due:</label>
+					<input type "number" name="totalRent" value="" min="0" >
+
+					<label for="roommateName">New Roommate:</label>
+		      <input type="text" name="roommateName" value="" >
+
+					<label for="monthName">Month:</label>
+					<select name="monthName">
+					<option value="january">January</option>
+					<option value="february">February</option>
+					<option value="march">March</option>
+					<option value="april">April</option>
+					<option value="may">May</option>
+					<option value="june">June</option>
+					<option value="july">July</option>
+					<option value="august">August</option>
+					<option value="september">September</option>
+					<option value="october">October</option>
+					<option value="november">November</option>
+					<option value="december">December</option>
+					</select>
+
+					<input id='nbnr' type="submit" value="New Bill with New Roommate">
+					<input id='nr' type="submit" value="New Roommate">
+					<input id='nb' type="submit" value="New Bill">
+
+				</fieldset>
+
+			</form>
+
+			<section id="graphs">
+				<canvas id="graph1" width="300" height="300"></canvas>
+				<canvas id="graph2" width="300" height="300"></canvas>
+				<canvas id="graph3" width="300" height="300"></canvas>
+				<canvas id="graph4" width="300" height="300"></canvas>
+			</section>
+		</main>
+
+	</body>
+</html>
