@@ -31,6 +31,9 @@ function newBillEvent(event){
   var inputBillName = document.getElementById("billName");
   var inputBillAmount = document.getElementById("billAmount");
   var currentBillsList = document.getElementById("billList");
+  var currentMonth = document.getElementById("monthName");
+  var billFrequency = document.getElementById("billFrequency");
+  new BillObject(currentMonth.value, inputBillAmount.value, billFrequency.value, inputBillName.value);
   var newListItem = document.createElement("li");
   newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value;
   currentBillsList.appendChild(newListItem);
