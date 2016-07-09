@@ -25,6 +25,10 @@ function formSubmitFunction(event) {
   event.target.totalRent.value = null;
 }
 
+function newRoommateButton(event){
+  event.preventDefault();
+}
+
 //LISTEN FOR EVENT AND RESPOND
 var form = document.getElementById('updateForm');   //reference form
 form.addEventListener('submit', formSubmitFunction);
