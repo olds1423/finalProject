@@ -25,6 +25,20 @@ function formSubmitFunction(event) {
   event.target.totalRent.value = null;
 }
 
+// trying to get the value of newRoomate into the list
+
+// function newRoommateEvent(event){
+//   event.preventDefault();
+//   var inputRoommate =
+//   var currentRoommateList = document.getElementById("roommateList");
+//   var child = document.createElement("li");
+//   child.textContent = event.target.value;
+//   currentRoommateList.appendChild(child);
+// }
+
 //LISTEN FOR EVENT AND RESPOND
-var form = document.getElementById('updateForm');   //reference form
-form.addEventListener('submit', formSubmitFunction);
+var nbnr = document.getElementById('nbnr');   //reference form
+nbnr.addEventListener('submit', formSubmitFunction);
+
+// var newRoommateButton = document.getElementById("nr");
+// newRoommateButton.addEventListener("click", newRoommateEvent);
