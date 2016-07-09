@@ -1,7 +1,11 @@
 var tracker = {
   monthNameArray: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
-  billObjectArray: [],      ////array of all bill obejcts
+
+  billObjectArray: [],      //array of all bill obejcts
   roommateNameArray: [],
+  billNameArray: [],        //array to hold chart data
+  billAmountArray: [],      //array to hold chart data
+
   totalBills: 0,
   totalRent: 0,
   totalRentAndBill: 0,
@@ -33,8 +37,14 @@ BillObject.prototype.divideRentEvenly = function() {
   tracker.totalRentAndBill /= divisor;
 };
 
+BillObject.prototype.pushNameAndAmountToArray = function() {
+  tracker.billNameArray.push(this.billName);
+  tracker.billAmountArray.push(this.billAmount);  //add this bill to rent to get total sum of rent and bill
+};
+
 BillObject.prototype.doAllMethods = function() {
   this.addAllBills();
   this.sumTotalRentAndBill();
   this.divideRentEvenly();
+  this.pushNameAndAmountToArray();
 };
