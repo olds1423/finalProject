@@ -26,6 +26,10 @@ function formSubmitFunction(event) {
 }
 
 // trying to get the value of newRoomate into the list
+function newBillEvent(event){
+  event.preventDefault();
+  var
+}
 
 function newRoommateEvent(event){
   event.preventDefault();
