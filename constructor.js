@@ -6,9 +6,7 @@ var tracker = {
   billNameArray: [],        //array to hold chart data
   billAmountArray: [],      //array to hold chart data
 
-  totalBills: 0,
-  totalRent: 0,
-  totalRentAndBill: 0,
+  totalRentAndBills: 0,
 };
 
 function BillObject(month, amount, frequency, bill) {   //bill constructor
@@ -21,12 +19,7 @@ function BillObject(month, amount, frequency, bill) {   //bill constructor
 }
 
 BillObject.prototype.addAllBills = function() {
-  tracker.totalBills += this.billAmount;  //update running total for all bills during each new instantiation
-};
-
-BillObject.prototype.sumTotalRentAndBill = function() {
-  var sum = this.billAmount + tracker.totalRent;
-  tracker.totalRentAndBill += sum;  //add this bill to rent to get total sum of rent and bill
+  tracker.totalRentAndBills += this.billAmount;  //update running total for all bills during each new instantiation
 };
 
 BillObject.prototype.divideRentEvenly = function() {
@@ -34,7 +27,7 @@ BillObject.prototype.divideRentEvenly = function() {
   for (each in tracker.roommateNameArray) {
     divisor += 1;
   }
-  tracker.totalRentAndBill /= divisor;
+  tracker.totalRentAndBills /= divisor;
 };
 
 BillObject.prototype.pushNameAndAmountToArray = function() {
@@ -44,7 +37,6 @@ BillObject.prototype.pushNameAndAmountToArray = function() {
 
 BillObject.prototype.doAllMethods = function() {
   this.addAllBills();
-  this.sumTotalRentAndBill();
   this.divideRentEvenly();
   this.pushNameAndAmountToArray();
 };
