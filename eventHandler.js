@@ -4,10 +4,10 @@ function formSubmitFunction(event) {
 
   //get variables from user
   var bill = event.target.billName.value;
-  var amount = parseInt(event.target.billAmount.value);
+  var amount = parseFloat(event.target.billAmount.value);
   var frequency = parseInt(event.target.billFrequency.value);
   var month = event.target.monthName.value;
-  var rent = parseInt(event.target.totalRent.value);
+  var rent = parseFloat(event.target.totalRent.value);
   var roomie = event.target.roommateName.value;
 
   tracker.totalRent = rent;              // total rent
