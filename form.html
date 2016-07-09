@@ -23,7 +23,7 @@
 
 		<nav id="navbar">
 
-			<a id="formLink" href="form.html">Add information</a>
+			<a id="formLink" href="index.html">Home</a>
 			<a id="statsLink" href="statistics.html">All Statistics</a>
 
 		</nav>
@@ -31,9 +31,8 @@
 		<main>
 			<form id='updateForm' method="post">
 
-				<legend>Input Rent Data</legend> <br>
+				<h2>Input Rent Data</h2> <br>
 
-				<fieldset id="fields">
 					<label for="billName">Bill Name:</label>
 					<input type="text" name="billName" value="" >
 
@@ -65,7 +64,6 @@
 					<option value="december">December</option>
 					</select>
 
-				</fieldset>
 				<input class='submit' id='nbnr' type="submit" value="New Bill with New Roommate">
 				<input class='submit' id='nr' type="submit" value="New Roommate">
 				<input class='submit' id='nb' type="submit" value="New Bill">
@@ -74,6 +72,16 @@
 
 			<section id="currentRoommates">
 				<h2>Current Roomates</h2>
+				<ul id="roommateList">
+
+				</ul>
+			</section>
+
+			<section id="currentBills">
+				<h2>Current Bills</h2>
+				<ul id="billList">
+
+				</ul>
 			</section>
 
 		</main>
