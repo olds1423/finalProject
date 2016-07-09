@@ -46,13 +46,31 @@ label{
 input{
 	background-color: rgba(103, 35, 180, 1);
 	border: 2px solid rgba(100, 255, 50, 1);
+	color: white;
 	margin: 5px;
 	height: 30px;
 	width: 250px;
 	border-radius: 5px;
 	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+
 
 }
+select{
+	background-color: rgba(103, 35, 180, 1);
+	border: 2px solid rgba(100, 255, 50, 1);
+	color: white;
+	margin: 5px;
+	height: 30px;
+	width: 250px;
+	border-radius: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+
+}
+
 ul{}
 li{}
 h1{}
