@@ -30,28 +30,64 @@
 
 		<main>
 			<form id='updateForm' action="form.html" method="post">
-				<!-- <label for="month">Month:</label> -->
-				<h2>Month:</h2>
+				<!-- <h2>Month:</h2>
 				<input id='month' type="text" name="month" value="">
 
-				<!-- <label for="newRoomate"></label> -->
-				<!-- <label for="roommateName">Roommate Name:</label> -->
 				<h2>New Roommate:</h2>
 				<input id='roommateName' type="text" name="roommateName" value="">
 				<input id='newRoomate' type="button" name="newRoomate" value="New Roomate">
 
 
-				<h2>New Bill:</h2>
-				<!-- name -->
-				<label for="billName">Bill Name:</label>
-				<input id='billName' type="text" name="billName" value="">
-				<!-- amount -->
-				<label for="billAmount">Bill Amount:</label>
-				<input id='billAmount' type="text" name="billAmount" value="">
+				<h2>New Bill:</h2> -->
+					<!-- name -->
+				<!-- <label for="billName">Bill Name:</label>
+				<input id='billName' type="text" name="billName" value=""> -->
+					<!-- amount -->
+				<!-- <label for="billAmount">Bill Amount:</label>
+				<input id='billAmount' type="text" name="billAmount" value=""> -->
 
+					<!-- submit -->
+				<!-- <input id='newBill' type="submit" name="newBill" value="Add New Bill"> -->
 
-				<!-- submit -->
-				<input id='newBill' type="submit" name="newBill" value="Add New Bill">
+				<legend>Input Rent Data</legend> <br>
+
+				<fieldset>
+					<label for="billName">Bill Name:</label>
+					<input type="text" name="billName" value="" >
+
+					<label for="billAmount">Bill Amount:</label>
+					<input type="number" name="billAmount" value="" min="0" >
+
+					<label for="billFrequency">Bill Frequency:</label>
+					<input type "number" name="billFrequency" value="" min="0" >
+					<br>
+					<label for="totalRent">Total Rent Due:</label>
+					<input type "number" name="totalRent" value="" min="0" >
+
+					<label for="roommateName">New Roommate:</label>
+		      <input type="text" name="roommateName" value="" >
+
+					<label for="monthName">Month:</label>
+					<select name="monthName">
+					<option value="january">January</option>
+					<option value="february">February</option>
+					<option value="march">March</option>
+					<option value="april">April</option>
+					<option value="may">May</option>
+					<option value="june">June</option>
+					<option value="july">July</option>
+					<option value="august">August</option>
+					<option value="september">September</option>
+					<option value="october">October</option>
+					<option value="november">November</option>
+					<option value="december">December</option>
+					</select>
+
+					<input id='nbnr' type="submit" value="New Bill with New Roommate">
+					<input id='nr' type="submit" value="New Roommate">
+					<input id='nb' type="submit" value="New Bill">
+
+				</fieldset>
 
 			</form>
 
