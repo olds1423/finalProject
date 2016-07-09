@@ -28,7 +28,15 @@ function formSubmitFunction(event) {
 // trying to get the value of newRoomate into the list
 function newBillEvent(event){
   event.preventDefault();
-  var
+  var inputBillName = document.getElementById("billName");
+  var inputBillAmount = document.getElementById("billAmount");
+  var currentBillsList = document.getElementById("billList");
+  var newListItem = document.createElement("li");
+  newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value;
+  currentBillsList.appendChild(newListItem);
+  inputBillName.value = "";
+  inputBillAmount.value = "";
+
 }
 
 function newRoommateEvent(event){
@@ -45,6 +53,9 @@ function newRoommateEvent(event){
 //LISTEN FOR EVENT AND RESPOND
 var nbnr = document.getElementById('nbnr');   //reference form
 nbnr.addEventListener('submit', formSubmitFunction);
+
+var newBillButton = document.getElementById("nb");
+newBillButton.addEventListener("click", newBillEvent);
 
 var newRoommateButton = document.getElementById("nr");
 newRoommateButton.addEventListener("click", newRoommateEvent);
