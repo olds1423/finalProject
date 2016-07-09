@@ -52,7 +52,7 @@ function formSubmitFunction(event) {
   var roomie = event.target.roommateName.value;
 
   tracker.totalRent = rent;              // total rent
-  tracker.roommateNameArray.push(roomie); //push name to array SHOULD BE SEPARATE FORM!!!!!
+  tracker.roommateNameArray.push(roomie); //push name to array SHOULD BE SEPARATE INPUT FORM!!!!!
 
   var newBill = new BillObject(month, amount, frequency, bill); //instantiate new object with user variables
   newBill.doAllMethods();
