@@ -148,6 +148,11 @@ a:hover{
 	flex-direction: column;
 	align-items: center;
 }
+.formSpot:hover{
+	background-color: rgba(186, 171, 130, .7);
+	border: 2px solid rgba(166, 43, 39, 1);
+	color: black;
+}
 #inptTntTitle{
 	color: white;
 	margin: 5px;
@@ -185,8 +190,10 @@ a:hover{
 	width: 300px;
 	border-radius: 5px;
 }
-#nbnr{
-	width: 300px;
+.submit:hover{
+	background-color: rgba(59, 91, 105, .8);
+	border: 2px solid	rgba(5, 171, 101, 1);
+	color: white;
 }
 #nr{
 	width: 200px;
@@ -224,6 +231,15 @@ a:hover{
 	border: 3px solid rgba(166, 43, 39, 1);
 	border-radius: 10px;
 }
+#refGraphs{
+	background-color: rgba(59, 91, 105, .8);
+	border: 2px solid	rgba(5, 171, 101, 1);
+}
+#refGraphs:hover{
+	background-color: rgba(186, 171, 130, .7);
+	border: 2px solid rgba(166, 43, 39, 1);
+}
+
 #longTermGaphs{}
 #graph1{}
 #graph2{}
