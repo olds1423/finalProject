@@ -1,29 +1,4 @@
 //EVENT HANDLING SECTION
-function formSubmitFunction(event) {
-  event.preventDefault();
-
-  //get variables from user
-  var bill = document.getElementById("billName");
-  var amount = parseInt(document.getElementById("billAmount"));
-  var frequency = parseInt(document.getElementById("billFrequency"));
-  var month = document.getElementById("monthName");
-  var roomie = document.getElementById("newRoomate");
-
-  tracker.roommateNameArray.push(roomie); //push name to array SHOULD BE SEPARATE INPUT FORM!!!!!
-  new BillObject(month.value, amount.value, frequency.value, bill.value);
-  
-  // var newBill = new BillObject(month.value, amount.value, frequency.value, bill.value); //instantiate new object with user variables
-  newBill.doAllMethods();
-  console.log(newBill);
-
-//clear values
-  event.target.monthName.value = '';
-  event.target.billName.value = '';
-  event.target.billAmount.value = null;
-  event.target.billFrequency.value = null;
-  event.target.totalRent.value = null;
-}
-
 // trying to get the value of newRoomate into the list
 function newBillEvent(event){
   event.preventDefault();
@@ -53,8 +28,6 @@ function newRoommateEvent(event){
 }
 
 //LISTEN FOR EVENT AND RESPOND
-var nbnr = document.getElementById('nbnr');   //reference form
-nbnr.addEventListener('submit', formSubmitFunction);
 
 var newBillButton = document.getElementById("nb");
 newBillButton.addEventListener("click", newBillEvent);
