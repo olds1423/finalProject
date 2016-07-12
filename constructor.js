@@ -9,6 +9,62 @@ var tracker = {
   totalRentAndBills: 0,
 };
 
+function Month(name){
+	this.name = name;
+	this.billObjectArray = [];
+	this.billNameArray = [];
+	this.billAmountArray = [];
+	this.roommateNameArray = [];
+	this.totalRentAndBills = 0;
+
+	var BarData = {
+	      labels: billNameArray,
+	      datasets: [
+	        {
+	          data: billAmountArray,
+	          backgroundColor: randColor(this.billObjectArray),
+	          borderColor: '#000000',
+	          borderWidth: 3,
+	          hoverBackgroundColor: '#000000',
+	          hoverBorderColor: '#ffffff',
+	        }
+	      ]
+	    }
+
+
+	var DoughnutData = {
+		labels: this.doAllMethods(),
+		datasets: [
+			{
+				data: this.divideRentEvenly(),
+				backgroundColor: randColor(this.billObjectArray),
+				borderColor: '#000000',
+				borderWidth: 3,
+				hoverBackgroundColor: '#000000',
+				hoverBorderColor: '#ffffff',
+			}
+		]
+	}
+
+}
+
+Month.prototype.addAllBills = function() {
+  this.totalRentAndBills += this.billAmount;  //update running total for all bills during each new instantiation
+};
+Month.prototype.divideRentEvenly = function() {
+  var divisor = 0;
+  for (each in this.roommateNameArray) {
+    divisor += 1;
+  }
+  return this.totalRentAndBills /= divisor;
+
+};
+Month.prototype.doAllMethods = function() {
+  this.addAllBills();
+  this.divideRentEvenly();
+};
+
+
 function BillObject(month, amount, frequency, bill) {   //bill constructor
   this.monthName = month;
   this.billAmount = parseInt(amount);
