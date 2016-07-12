@@ -6,6 +6,7 @@ var tracker = {
   billNameArray: [],        //array to hold chart data
   billAmountArray: [],      //array to hold chart data
   totalRentAndBills: 0,
+	monthObjectArray: []
 };
 
 function Month(name){
@@ -15,6 +16,8 @@ function Month(name){
 	this.billAmountArray = [];
 	this.roommateNameArray = [];
 	this.totalRentAndBills = 0;
+	tracker.monthObjectArray.push(this);   //push newly instantiated billobject to array in tracker
+
 
 	var BarData = {
 	      labels: billNameArray,
