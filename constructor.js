@@ -11,8 +11,8 @@ var tracker = {
 
 function BillObject(month, amount, frequency, bill) {   //bill constructor
   this.monthName = month;
-  this.billAmount = amount;
-  this.billFrequency = frequency;      //frequency inside of month
+  this.billAmount = parseInt(amount);
+  this.billFrequency = parseInt(frequency);      //frequency inside of month
   this.billName = bill;
 
   tracker.billObjectArray.push(this);   //push newly instantiated billobject to array in tracker

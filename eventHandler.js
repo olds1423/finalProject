@@ -29,6 +29,7 @@ function newRoommateEvent(event){
 
 //LISTEN FOR EVENT AND RESPOND
 
+
 var newBillButton = document.getElementById("nb");
 newBillButton.addEventListener("click", newBillEvent);
 
