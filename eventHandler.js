@@ -3,17 +3,16 @@ function formSubmitFunction(event) {
   event.preventDefault();
 
   //get variables from user
-  var bill = event.target.billName.value;
-  var amount = parseInt(event.target.billAmount.value);
-  var frequency = parseInt(event.target.billFrequency.value);
-  var month = event.target.monthName.value;
-  var rent = parseInt(event.target.totalRent.value);
-  var roomie = event.target.roommateName.value;
+  var bill = document.getElementById("billName");
+  var amount = parseInt(document.getElementById("billAmount"));
+  var frequency = parseInt(document.getElementById("billFrequency"));
+  var month = document.getElementById("monthName");
+  var roomie = document.getElementById("newRoomate");
 
-  tracker.totalRent = rent;              // total rent
   tracker.roommateNameArray.push(roomie); //push name to array SHOULD BE SEPARATE INPUT FORM!!!!!
-
-  var newBill = new BillObject(month, amount, frequency, bill); //instantiate new object with user variables
+  new BillObject(month.value, amount.value, frequency.value, bill.value);
+  
+  // var newBill = new BillObject(month.value, amount.value, frequency.value, bill.value); //instantiate new object with user variables
   newBill.doAllMethods();
   console.log(newBill);
 
