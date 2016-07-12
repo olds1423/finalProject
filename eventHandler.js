@@ -8,6 +8,7 @@ function newBillEvent(event){
   var currentMonth = document.getElementById("monthName");
   var billFrequency = document.getElementById("billFrequency");
   new BillObject(currentMonth.value, inputBillAmount.value, billFrequency.value, inputBillName.value);
+  // tracker.billObjectArray.BillObject.pushNameAndAmountToArray();
   var newListItem = document.createElement("li");
   newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value;
   currentBillsList.appendChild(newListItem);
@@ -21,6 +22,7 @@ function newRoommateEvent(event){
   var inputRoommate = document.getElementById("newRoomate");
   var currentRoommateList = document.getElementById("roommateList");
   var child = document.createElement("li");
+  tracker.roommateNameArray.push(inputRoommate.value);
   child.textContent = inputRoommate.value;
   tracker.roommateNameArray.push(inputRoommate.value);
   currentRoommateList.appendChild(child);
