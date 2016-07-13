@@ -6,49 +6,49 @@ var tracker = {
   billNameArray: [],        //array to hold chart data
   billAmountArray: [],      //array to hold chart data
   totalRentAndBills: 0,
-	monthObjectArray: []
+	monthObjectArray:[]
 };
 
 var allMonths = [];
 
 function Month(name){
-	this.monthName = name;
-	this.billObjectArray = [];
-	this.billNameArray = [];
-	this.billAmountArray = [];
-	this.roommateNameArray = [];
-	this.totalRentAndBills = 0;
-	allMonths.push(this);   //push newly instantiated billobject to array in tracker
+  this.monthName = name;
+  this.billObjectArray = [];
+  this.billNameArray = [];
+  this.billAmountArray = [];
+  this.roommateNameArray = [];
+  this.totalRentAndBills = 0;
+  allMonths.push(this);   //push newly instantiated billobject to array in tracker
+  console.log("working?");
 
-
-	var BarData = {
-	      labels: billNameArray,
-	      datasets: [
-	        {
-	          data: billAmountArray,
-	          backgroundColor: randColor(this.billObjectArray),
-	          borderColor: '#000000',
-	          borderWidth: 3,
-	          hoverBackgroundColor: '#000000',
-	          hoverBorderColor: '#ffffff',
-	        }
-	      ]
-	    }
-
-
-	var DoughnutData = {
-		labels: this.doAllMethods(),
-		datasets: [
-			{
-				data: this.divideRentEvenly(),
-				backgroundColor: randColor(this.billObjectArray),
-				borderColor: '#000000',
-				borderWidth: 3,
-				hoverBackgroundColor: '#000000',
-				hoverBorderColor: '#ffffff',
-			}
-		]
-	}
+	// var BarData = {
+	//       labels: this.billNameArray,
+	//       datasets: [
+	//         {
+	//           data: this.billAmountArray,
+	//           backgroundColor: randColor(this.billObjectArray),
+	//           borderColor: '#000000',
+	//           borderWidth: 3,
+	//           hoverBackgroundColor: '#000000',
+	//           hoverBorderColor: '#ffffff',
+	//         }
+	//       ]
+	//     }
+  //
+  //
+	// var DoughnutData = {
+	// 	labels: this.doAllMethods(),
+	// 	datasets: [
+	// 		{
+	// 			data: this.divideRentEvenly(),
+	// 			backgroundColor: randColor(this.billObjectArray),
+	// 			borderColor: '#000000',
+	// 			borderWidth: 3,
+	// 			hoverBackgroundColor: '#000000',
+	// 			hoverBorderColor: '#ffffff',
+	// 		}
+	// 	]
+	// }
 
 }
 
@@ -94,6 +94,13 @@ BillObject.prototype.pushNameAndAmountToArray = function() {
   tracker.billNameArray.push(this.billName);
   tracker.billAmountArray.push(this.billAmount);  //add this bill to rent to get total sum of rent and bill
 };
+
+BillObject.prototype.findMyMonth = function () {
+  for (var i = 0; i < allMonths.length; i++) {
+    allMonths[i].billObjectArray.push(this.BillObject);
+    allMonths[i].billAmountArray.push(this.billAmount);
+    allMonths[i].billName.push(this.billNameArray);
+  };
 
 BillObject.prototype.doAllMethods = function() {
   this.addAllBills();
