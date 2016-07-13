@@ -19,8 +19,6 @@ function Month(name){
   this.roommateNameArray = [];
   this.totalRentAndBills = 0;
   allMonths.push(this);   //push newly instantiated billobject to array in tracker
-  console.log("working?");
-
 	// var BarData = {
 	//       labels: this.billNameArray,
 	//       datasets: [
@@ -49,9 +47,7 @@ function Month(name){
 	// 		}
 	// 	]
 	// }
-
 }
-
 // To-Do: Rstructure these
 function addAllBills(object){
   object.totalRentAndBills += object.billAmount;  //update running total for all bills during each new instantiation
@@ -69,9 +65,23 @@ function doAllMethods(object){
   this.divideRentEvenly();
 };
 
+var january = new Month('january');
+var february = new Month('february');
+var march = new Month('march');
+var april = new Month('april');
+var may = new Month('may');
+var june = new Month('june');
+var july = new Month('july');
+var august = new Month('august');
+var september = new Month('september');
+var october = new Month('october');
+var november = new Month('november');
+var december = new Month('december');
+console.log(allMonths);
+
 
 function BillObject(month, amount, frequency, bill) {   //bill constructor
-  this.monthName = month;
+  this.billMonthName = month;
   this.billAmount = parseInt(amount);
   this.billFrequency = parseInt(frequency);      //frequency inside of month
   this.billName = bill;
@@ -97,32 +107,27 @@ BillObject.prototype.pushNameAndAmountToArray = function() {
 
 BillObject.prototype.findMyMonth = function () {
   for (var i = 0; i < allMonths.length; i++) {
-    allMonths[i].billObjectArray.push(this.BillObject);
-    allMonths[i].billAmountArray.push(this.billAmount);
-    allMonths[i].billName.push(this.billNameArray);
-  };
+    if (allMonths[i].monthName === this.billMonthName) {
+      allMonths[i].billObjectArray.push(this);
+      allMonths[i].billNameArray.push(this.billName);
+      allMonths[i].billAmountArray.push(this.billAmount);
+      console.log(allMonths[i]);
+    }
+  }
+  console.log(allMonths);
+};
 
 BillObject.prototype.doAllMethods = function() {
   this.addAllBills();
   this.divideRentEvenly();
   this.pushNameAndAmountToArray();
+  this.findMyMonth();
 };
 
 
 
 //Months:
 
-var january = new Month('january');
-var february = new Month('february');
-var march = new Month('march');
-var april = new Month('april');
-var may = new Month('may');
-var june = new Month('june');
-var july = new Month('july');
-var august = new Month('august');
-var september = new Month('september');
-var october = new Month('october');
-var november = new Month('november');
-var december = new Month('december');
+
 
 //end
