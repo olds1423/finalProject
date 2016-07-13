@@ -106,11 +106,33 @@
 		</main>
 
 		<section id="graphs">
-			<input id='refGraphs' type="submit" value="Refresh Graphs">
-			<canvas id="graph1" width="300" height="300"></canvas>
-			<canvas id="graph2" width="300" height="300"></canvas>
-			<canvas id="graph3" width="300" height="300"></canvas>
-			<canvas id="graph4" width="300" height="300"></canvas>
+
+			<section id="controls">
+				<input id='refGraphs' type="submit" value="Refresh Graphs">
+
+				<select id="" name="whichGraph">
+					<option class='formSpot' value="n/a">Select</option>
+					<option class='formSpot' value="january">January</option>
+					<option class='formSpot' value="february">February</option>
+					<option class='formSpot' value="march">March</option>
+					<option class='formSpot' value="april">April</option>
+					<option class='formSpot' value="may">May</option>
+					<option class='formSpot' value="june">June</option>
+					<option class='formSpot' value="july">July</option>
+					<option class='formSpot' value="august">August</option>
+					<option class='formSpot' value="september">September</option>
+					<option class='formSpot' value="october">October</option>
+					<option class='formSpot' value="november">November</option>
+					<option class='formSpot' value="december">December</option>
+				</select>
+
+			</section>
+
+			<section>
+				<canvas id="graph1" width="300" height="300"></canvas>
+				<canvas id="graph2" width="300" height="300"></canvas>
+			</section>
+
 		</section>
 
 		<script type='text/javascript' src='constructor.js'></script>
