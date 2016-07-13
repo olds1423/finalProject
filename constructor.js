@@ -14,8 +14,8 @@ var allMonths = [];
 function Month(name){
 	this.monthName = name;
 	this.billObjectArray = [];
-	// this.billNameArray = [];
-	// this.billAmountArray = [];
+	this.billNameArray = [];
+	this.billAmountArray = [];
 	this.roommateNameArray = [];
 	this.totalRentAndBills = 0;
 	allMonths.push(this);   //push newly instantiated billobject to array in tracker
