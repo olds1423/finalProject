@@ -1,7 +1,3 @@
-
-var placeHolderArray = [25, 25, 25, 25];
-var newPlaceHolderArray = ['a', 'b', 'c', 'd'];
-
 function makeDoughnutChart(object, placement) {
   var canvas = document.getElementById('graph' + placement);
   var ctx = canvas.getContext('2d');
@@ -12,8 +8,6 @@ function makeDoughnutChart(object, placement) {
   });
 }
 
-
-///////\\\\\\\\\\\\\\////////////
 
 function makeBarChart(object, placement) {
   var canvas = document.getElementById('graph' + placement);
