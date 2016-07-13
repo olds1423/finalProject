@@ -19,13 +19,13 @@ function Month(name){
 	this.roommateNameArray = [];
 	this.totalRentAndBills = 0;
 	allMonths.push(this);   //push newly instantiated billobject to array in tracker
+	console.log('working');
 
-
-	var BarData = {
-	      labels: billNameArray,
+	this.BarData = {
+	      labels: this.billNameArray,
 	      datasets: [
 	        {
-	          data: billAmountArray,
+	          data: this.billAmountArray,
 	          backgroundColor: randColor(this.billObjectArray),
 	          borderColor: '#000000',
 	          borderWidth: 3,
@@ -36,11 +36,11 @@ function Month(name){
 	    }
 
 
-	var DoughnutData = {
-		labels: this.doAllMethods(),
+	this.DoughnutData = {
+		labels: doAllMethods(),
 		datasets: [
 			{
-				data: this.divideRentEvenly(),
+				data: divideRentEvenly(),
 				backgroundColor: randColor(this.billObjectArray),
 				borderColor: '#000000',
 				borderWidth: 3,
@@ -67,6 +67,7 @@ function divideRentEvenly(object){
 function doAllMethods(object){
   this.addAllBills();
   this.divideRentEvenly();
+	return object.totalRentAndBills;
 };
 
 
