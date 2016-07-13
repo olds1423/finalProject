@@ -9,14 +9,16 @@ var tracker = {
 	monthObjectArray: []
 };
 
+var allMonths = [];
+
 function Month(name){
-	this.name = name;
+	this.monthName = name;
 	this.billObjectArray = [];
-	this.billNameArray = [];
-	this.billAmountArray = [];
+	// this.billNameArray = [];
+	// this.billAmountArray = [];
 	this.roommateNameArray = [];
 	this.totalRentAndBills = 0;
-	tracker.monthObjectArray.push(this);   //push newly instantiated billobject to array in tracker
+	allMonths.push(this);   //push newly instantiated billobject to array in tracker
 
 
 	var BarData = {
@@ -50,18 +52,19 @@ function Month(name){
 
 }
 
-Month.prototype.addAllBills = function() {
-  this.totalRentAndBills += this.billAmount;  //update running total for all bills during each new instantiation
+// To-Do: Rstructure these
+function addAllBills(object){
+  object.totalRentAndBills += object.billAmount;  //update running total for all bills during each new instantiation
 };
-Month.prototype.divideRentEvenly = function() {
+function divideRentEvenly(object){
   var divisor = 0;
-  for (each in this.roommateNameArray) {
+  for (each in object.roommateNameArray) {
     divisor += 1;
   }
   return this.totalRentAndBills /= divisor;
 
 };
-Month.prototype.doAllMethods = function() {
+function doAllMethods(object){
   this.addAllBills();
   this.divideRentEvenly();
 };
@@ -97,3 +100,22 @@ BillObject.prototype.doAllMethods = function() {
   this.divideRentEvenly();
   this.pushNameAndAmountToArray();
 };
+
+
+
+//Months:
+
+var january = new Month('january');
+var february = new Month('february');
+var march = new Month('march');
+var april = new Month('april');
+var may = new Month('may');
+var june = new Month('june');
+var july = new Month('july');
+var august = new Month('august');
+var september = new Month('september');
+var october = new Month('october');
+var november = new Month('november');
+var december = new Month('december');
+
+//end
