@@ -226,6 +226,7 @@ a:hover{
 #formGraphs {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-around;
 	width: 1000px;
 	height: 500px;
 	box-sizing: border-box;
