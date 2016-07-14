@@ -17,18 +17,13 @@ function Month(name){
   this.billNameArray = [];
   this.billAmountArray = [];
   this.roommateNameArray = [];
-  this.totalRentAndBills = 0;
+  this.grandTotal = 0;
   allMonths.push(this);   //push newly instantiated billobject to array in tracker
 }
 
 Month.prototype.addAllBills = function() {
-  while (true) {
-    if (allMonths[i].monthName === this.billMonthName) {
-      for (var i = 0; i < billObjectArray.length; i++) {
-      }
-      break;
-    }
-  }
+
+
 };
 
 var helperFunctions = {
@@ -89,12 +84,13 @@ BillObject.prototype.pushNameAndAmountToArray = function() {
   tracker.billAmountArray.push(this.billAmount);  //add this bill to rent to get total sum of rent and bill
 };
 
-BillObject.prototype.findMyMonth = function () {
+BillObject.prototype.findAndUpdateMonth = function () {
   for (var i = 0; i < allMonths.length; i++) {
     if (allMonths[i].monthName === this.billMonthName) {
       allMonths[i].billObjectArray.push(this);
       allMonths[i].billNameArray.push(this.billName);
       allMonths[i].billAmountArray.push(this.billAmount);
+      allMonths[i].grandTotal += this.billAmount;
     }
   }
 };
@@ -103,7 +99,7 @@ BillObject.prototype.doAllMethods = function() {
   this.addAllBills();
   this.divideRentEvenly();
   this.pushNameAndAmountToArray();
-  this.findMyMonth();
+  this.findAndUpdateMonth();
 };
 
 

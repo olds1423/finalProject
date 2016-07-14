@@ -1,10 +1,16 @@
 function makeDoughnutChart(object, placement) {
   console.log("is this working");
+  var dataArray = [];
+  for (var i = 0; i < object.billObjectArray.length; i++) {
+    dataArray[i] = object.billAmountArray[i] / object.roommateNameArray.length;
+  }
+  console.log(dataArray);
+  console.log(object.billAmountArrays);
   var DoughnutData = {
     labels: helperFunctions.doAllMethods(object),
     datasets: [
       {
-        data: object.billAmountArray,
+        data: dataArray,
         backgroundColor: randColor(object.billObjectArray),
         borderColor: '#000000',
         borderWidth: 3,
