@@ -1,40 +1,63 @@
 function makeDoughnutChart(object, placement) {
+  console.log("is this working");
+  var DoughnutData = {
+    labels: helperFunctions.doAllMethods(object),
+    datasets: [
+      {
+        data: object.billAmountArray,
+        backgroundColor: randColor(object.billObjectArray),
+        borderColor: '#000000',
+        borderWidth: 3,
+        hoverBackgroundColor: '#000000',
+        hoverBorderColor: '#ffffff',
+      }
+    ]
+  };
+  console.log("is this working 2");
+
   var canvas = document.getElementById('graph' + placement);
   var ctx = canvas.getContext('2d');
 
   var chart = new Chart(ctx, {
     type: 'doughnut',
-    data: object.DoughnutData
+    data: DoughnutData
   });
 }
 
-
 function makeBarChart(object, placement) {
+  var BarData = {
+    labels: object.billNameArray,
+    datasets: [
+      {
+        data: object.billAmountArray,
+        backgroundColor: randColor(object.billObjectArray),
+        borderColor: '#000000',
+        borderWidth: 3,
+        hoverBackgroundColor: '#000000',
+        hoverBorderColor: '#ffffff',
+      }
+    ]
+  };
+
   var canvas = document.getElementById('graph' + placement);
   var ctx = canvas.getContext('2d');
 
   var chart = new Chart(ctx, {
     type: 'bar',
-    data: object.BarData
+    data: BarData
   });
 }
 
-function makeMonths() {
-	for (var i = 0; i < 12; i++) {
-		var month = new Month(tracker.monthNameArray[i])
-	}
-}
-
-function makeGraphs() {
-	for (var i = 0; i < monthObjectArray.length; i++) {
-		makeDoughnutChart(monthObjectArray[i], i);
-		makeBarChart(monthObjectArray[i], i);
-	}
-}
+// function makeGraphs() {
+// 	for (var i = 0; i < monthObjectArray.length; i++) {
+// 		makeDoughnutChart(monthObjectArray[i], i);
+// 		makeBarChart(monthObjectArray[i], i);
+// 	}
+// }
 
 function main(){
-	makeDoughnutChart(tracker.monthObjectArray[0], 1);
-	makeBarChart(tracker.monthObjectArray[0], 1);
+	makeBarChart(allMonths[0], 1);
+  makeDoughnutChart(allMonths[0], 2);
 }
 
 
