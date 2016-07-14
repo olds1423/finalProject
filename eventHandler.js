@@ -7,14 +7,17 @@ function newBillEvent(event){
   var currentBillsList = document.getElementById("billList");
   var currentMonth = document.getElementById("monthName");
   var billFrequency = document.getElementById("billFrequency");
-  new BillObject(currentMonth.value, inputBillAmount.value, billFrequency.value, inputBillName.value);
+  var bill = new BillObject(currentMonth.value, inputBillAmount.value, billFrequency.value, inputBillName.value);
+  bill.findMyMonth();
+  // push the bill object into the correct month using the current month YES
+
   // tracker.billObjectArray.BillObject.pushNameAndAmountToArray();
   var newListItem = document.createElement("li");
   newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value;
   currentBillsList.appendChild(newListItem);
   inputBillName.value = "";
   inputBillAmount.value = "";
-
+//
 }
 
 function newRoommateEvent(event){
@@ -27,6 +30,13 @@ function newRoommateEvent(event){
   tracker.roommateNameArray.push(inputRoommate.value);
   currentRoommateList.appendChild(child);
   inputRoommate.value = "";
+}
+
+function removeRoomate(){
+  //add an option from the array of roomates that is created
+  // the roommate selected in the array will be removed for that month
+
+  // should we add two buttons at the bottom? One per month on for all instance ?
 }
 
 //LISTEN FOR EVENT AND RESPOND
