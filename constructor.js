@@ -19,34 +19,36 @@ function Month(name){
   this.roommateNameArray = [];
   this.totalRentAndBills = 0;
   allMonths.push(this);   //push newly instantiated billobject to array in tracker
-	// var BarData = {
-	//       labels: this.billNameArray,
-	//       datasets: [
-	//         {
-	//           data: this.billAmountArray,
-	//           backgroundColor: randColor(this.billObjectArray),
-	//           borderColor: '#000000',
-	//           borderWidth: 3,
-	//           hoverBackgroundColor: '#000000',
-	//           hoverBorderColor: '#ffffff',
-	//         }
-	//       ]
-	//     }
-  //
-  //
-	// var DoughnutData = {
-	// 	labels: this.doAllMethods(),
-	// 	datasets: [
-	// 		{
-	// 			data: this.divideRentEvenly(),
-	// 			backgroundColor: randColor(this.billObjectArray),
-	// 			borderColor: '#000000',
-	// 			borderWidth: 3,
-	// 			hoverBackgroundColor: '#000000',
-	// 			hoverBorderColor: '#ffffff',
-	// 		}
-	// 	]
-	// }
+  console.log('working');
+
+  this.BarData = {
+    labels: this.billNameArray,
+    datasets: [
+      {
+        data: this.billAmountArray,
+        backgroundColor: randColor(this.billObjectArray),
+        borderColor: '#000000',
+        borderWidth: 3,
+        hoverBackgroundColor: '#000000',
+        hoverBorderColor: '#ffffff',
+      }
+    ]
+  };
+
+
+  this.DoughnutData = {
+    labels: doAllMethods(),
+    datasets: [
+      {
+        data: divideRentEvenly(),
+        backgroundColor: randColor(this.billObjectArray),
+        borderColor: '#000000',
+        borderWidth: 3,
+        hoverBackgroundColor: '#000000',
+        hoverBorderColor: '#ffffff',
+      }
+    ]
+  };
 }
 // To-Do: Rstructure these
 function addAllBills(object){
@@ -63,6 +65,7 @@ function divideRentEvenly(object){
 function doAllMethods(object){
   this.addAllBills();
   this.divideRentEvenly();
+  return object.totalRentAndBills;
 };
 
 var january = new Month('january');
