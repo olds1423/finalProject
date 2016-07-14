@@ -32,6 +32,13 @@ function newRoommateEvent(event){
   inputRoommate.value = "";
 }
 
+function removeRoomate(){
+  //add an option from the array of roomates that is created
+  // the roommate selected in the array will be removed for that month
+
+  // should we add two buttons at the bottom? One per month on for all instance ?
+}
+
 //LISTEN FOR EVENT AND RESPOND
 
 
