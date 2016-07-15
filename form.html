@@ -37,7 +37,6 @@
 
 				<label for="monthName">Month:</label>
 				<select class='formSpot' id="monthName" name="monthName">
-					<option class='formSpot' value="n/a">Select</option>
 					<option class='formSpot' value="january">January</option>
 					<option class='formSpot' value="february">February</option>
 					<option class='formSpot' value="march">March</option>
@@ -111,7 +110,6 @@
 				<input id='refGraphs' type="submit" value="Refresh Graphs">
 
 				<select id="" name="whichGraph">
-					<option class='formSpot' value="n/a">Select</option>
 					<option class='formSpot' value="january">January</option>
 					<option class='formSpot' value="february">February</option>
 					<option class='formSpot' value="march">March</option>
@@ -128,9 +126,13 @@
 
 			</section>
 
-			<section>
-				<canvas id="graph1" width="300" height="300"></canvas>
-				<canvas id="graph2" width="300" height="300"></canvas>
+			<section id="formGraphs">
+				<div>
+						<canvas id="graph1" width="300" height="300"></canvas>
+				</div>
+				<div>
+					<canvas id="graph2" width="300" height="300"></canvas>
+				</div>
 			</section>
 
 		</section>
