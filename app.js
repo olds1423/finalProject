@@ -1,13 +1,10 @@
 function makeDoughnutChart(object, placement) {
-  console.log("is this working");
   var dataArray = [];
   for (var i = 0; i < object.billObjectArray.length; i++) {
     dataArray[i] = object.billAmountArray[i] / object.roommateNameArray.length;
   }
-  console.log(dataArray);
-  console.log(object.billAmountArrays);
   var DoughnutData = {
-    labels: helperFunctions.doAllMethods(object),
+    labels: object.billNameArray,
     datasets: [
       {
         data: dataArray,
@@ -19,7 +16,6 @@ function makeDoughnutChart(object, placement) {
       }
     ]
   };
-  console.log("is this working 2");
 
   var canvas = document.getElementById('graph' + placement);
   var ctx = canvas.getContext('2d');
@@ -69,7 +65,7 @@ function main(){
 
 
 
-main();
+// main();
 
 
 
