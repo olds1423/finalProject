@@ -75,21 +75,8 @@ select{
 
 }
 
-ul{
-	color: white;
-	margin: 5px;
-	font-size: 20px;
-	padding: 2px;
-	box-sizing: border-box;
-}
-li{
-	color: white;
-	margin: 5px;
-	font-size: 20px;
-	padding: 2px;
-	box-sizing: border-box;
-
-}
+ul{}
+li{}
 h1{}
 h2{}
 h3{}
@@ -139,10 +126,36 @@ a:hover{
 	padding: 2px;
 	box-sizing: border-box;
 }
+#landingMain{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+	background-color: rgba(32, 97, 204, .6);
+	border: 3px solid rgba(180, 35, 35, 1);
+	border-radius: 10px;
+	padding: 10px;
+	width: 1000px;
+	margin: 10px;
 }
-#genInfo
-#pricing{}
-#updateHistory{}
+#genInfo{
+	color: white;
+	width: 500px
+	padding: 5px;
+}
+#pricing{
+	color: white;
+	padding: 5px;
+
+}
+#updateHistory{
+	color: white;
+	list-style: none;
+	padding: 5px;
+	margin: 5px;
+	box-sizing: border-box;
+
+}
 #updateForm{
 	display: flex;
 	flex-direction: column;
@@ -204,6 +217,18 @@ a:hover{
 #currentRoommates{}
 #roommateList{
 	list-style: none;
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+#roommateList.li{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
 }
 #rmmtTitle{
 	color: white;
@@ -215,6 +240,18 @@ a:hover{
 #currentBills{}
 #billList{
 	list-style: none;
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+#billList.li{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
 }
 #bllTitle{
 	color: white;
