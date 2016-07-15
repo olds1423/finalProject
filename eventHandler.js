@@ -9,6 +9,13 @@ function newBillEvent(event){
   var billFrequency = document.getElementById("billFrequency");
   var bill = new BillObject(currentMonth.value, inputBillAmount.value, billFrequency.value, inputBillName.value);
   bill.findAndUpdateMonth();
+
+	var billSelector = document.getElementById('remBill');
+	var billOption = document.createElement('option');
+	billOption.value = inputBillName.value;
+	billOption.textContent = inputBillName.value;
+	billSelector.appendChild(billOption);
+
   // push the bill object into the correct month using the current month YES
 
   // tracker.billObjectArray.BillObject.pushNameAndAmountToArray();
@@ -25,9 +32,18 @@ function newRoommateEvent(event){
   var targetMonth = document.getElementById('monthName');
   var inputRoommate = document.getElementById("newRoomate");
   var currentRoommateList = document.getElementById("roommateList");
+	var roommateSelector = document.getElementById('remRmmt');
+
   var child = document.createElement("li");
-  tracker.roommateNameArray.push(inputRoommate.value);
-  child.textContent = inputRoommate.value;
+	tracker.roommateNameArray.push(inputRoommate.value);
+	child.textContent = inputRoommate.value;
+
+	var roomateOption = document.createElement('option');
+	roomateOption.value = inputRoommate.value;
+
+	roomateOption.textContent = inputRoommate.value;
+
+
 
   for (var i = 0; i < allMonths.length; i++) {
     if(allMonths[i].monthName === targetMonth.value){
@@ -35,6 +51,7 @@ function newRoommateEvent(event){
     }
 
   }
+	roommateSelector.appendChild(roomateOption);
   currentRoommateList.appendChild(child);
   inputRoommate.value = "";
 }
