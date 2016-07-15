@@ -46,6 +46,22 @@ function removeRoomate(){
   // should we add two buttons at the bottom? One per month on for all instance ?
 }
 
+function refreshGraphs(event) {
+	event.preventDefault();
+
+	var targetMonth = document.getElementById('whichGraph');
+	console.log(targetMonth.value);
+	for (var i = 0; i < allMonths.length; i++) {
+		console.log(allMonths[i]);
+		if(targetMonth.value === allMonths[i].monthName){
+
+			makeDoughnutChart(allMonths[i], 1);
+			makeBarChart(allMonths[i], 2);
+		}
+	}
+
+
+}
 //LISTEN FOR EVENT AND RESPOND
 
 
@@ -54,3 +70,6 @@ newBillButton.addEventListener("click", newBillEvent);
 
 var newRoommateButton = document.getElementById("nr");
 newRoommateButton.addEventListener("click", newRoommateEvent);
+
+var refreshButton = document.getElementById('refGraphs');
+refreshButton.addEventListener("click", refreshGraphs);
