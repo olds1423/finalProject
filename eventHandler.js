@@ -9,6 +9,13 @@ function newBillEvent(event){
   var billFrequency = document.getElementById("billFrequency");
   var bill = new BillObject(currentMonth.value, inputBillAmount.value, billFrequency.value, inputBillName.value);
   bill.findAndUpdateMonth();
+
+	var billSelector = document.getElementById('selectedBill');
+	var billOption = document.createElement('option');
+	billOption.value = inputBillName.value;
+	billOption.textContent = inputBillName.value;
+	billSelector.appendChild(billOption);
+
   // push the bill object into the correct month using the current month YES
 
   // tracker.billObjectArray.BillObject.pushNameAndAmountToArray();
@@ -25,9 +32,19 @@ function newRoommateEvent(event){
   var targetMonth = document.getElementById('monthName');
   var inputRoommate = document.getElementById("newRoomate");
   var currentRoommateList = document.getElementById("roommateList");
+	var roommateSelector = document.getElementById('selectedRoomate');
+
   var child = document.createElement("li");
-  tracker.roommateNameArray.push(inputRoommate.value);
-  child.textContent = inputRoommate.value;
+	tracker.roommateNameArray.push(inputRoommate.value);
+	child.textContent = inputRoommate.value;
+	child.id = inputRoommate.value + '-li';
+
+	var roomateOption = document.createElement('option');
+	roomateOption.value = inputRoommate.value;
+	roomateOption.id = inputRoommate.value
+	roomateOption.textContent = inputRoommate.value;
+
+
 
   for (var i = 0; i < allMonths.length; i++) {
     if(allMonths[i].monthName === targetMonth.value){
@@ -35,15 +52,41 @@ function newRoommateEvent(event){
     }
 
   }
+	roommateSelector.appendChild(roomateOption);
   currentRoommateList.appendChild(child);
   inputRoommate.value = "";
 }
 
-function removeRoomate(){
-  //add an option from the array of roomates that is created
-  // the roommate selected in the array will be removed for that month
+function removeRoomate(event){
+	event.preventDefault();
 
-  // should we add two buttons at the bottom? One per month on for all instance ?
+	var selectedRoomate = document.getElementById('selectedRoomate');
+	var targetMonth = document.getElementById('monthName');
+	var currentRoommateList = document.getElementById("roommateList");
+
+	for (var i = 0; i < allMonths.length; i++) {
+		var nameLocation = allMonths[i].roommateNameArray.indexOf(selectedRoomate.value);
+		if(targetMonth.value === allMonths[i].monthName){
+			if (nameLocation > -1) {
+				allMonths[i].roommateNameArray.splice(nameLocation, 1);
+				var child = document.getElementById(selectedRoomate.value + '-li')
+				currentRoommateList.removeChild(child);
+
+				child = document.getElementById(selectedRoomate.value);
+				selectedRoomate.removeChild(child);
+
+				break;
+			}
+			else{
+				break;
+			}
+		}
+	}
+}
+
+function removeBill(event) {
+	event.preventDefault();
+
 }
 
 function refreshGraphs(event) {
@@ -73,3 +116,8 @@ newRoommateButton.addEventListener("click", newRoommateEvent);
 
 var refreshButton = document.getElementById('refGraphs');
 refreshButton.addEventListener("click", refreshGraphs);
+
+var removeRoomateButton = document.getElementById('removeRoomateBbutton');
+removeRoomateButton.addEventListener('click', removeRoomate);
+var removeBillButton = document.getElementById('removeBillButton');
+removeBillButton.addEventListener('click', removeBill);
