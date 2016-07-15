@@ -89,17 +89,15 @@ function removeBill(event) {
 
 }
 
-function refreshGraphs(event) {
+function refreshGraphs(event, location) {
 	event.preventDefault();
 
 	var targetMonth = document.getElementById('whichGraph');
-	console.log(targetMonth.value);
 	for (var i = 0; i < allMonths.length; i++) {
-		console.log(allMonths[i]);
 		if(targetMonth.value === allMonths[i].monthName){
 
-			makeDoughnutChart(allMonths[i], 1);
-			makeBarChart(allMonths[i], 2);
+			makeBarChart(allMonths[i], 1);
+			makeDoughnutChart(allMonths[i], 2);
 		}
 	}
 
