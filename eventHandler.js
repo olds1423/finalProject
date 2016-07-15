@@ -14,13 +14,16 @@ function newBillEvent(event){
 	var billOption = document.createElement('option');
 	billOption.value = inputBillName.value;
 	billOption.textContent = inputBillName.value;
+	billOption.id = inputBillName.value;
 	billSelector.appendChild(billOption);
+
 
   // push the bill object into the correct month using the current month YES
 
   // tracker.billObjectArray.BillObject.pushNameAndAmountToArray();
   var newListItem = document.createElement("li");
   newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value;
+	newListItem.id = inputBillName.value + '-li';
   currentBillsList.appendChild(newListItem);
   inputBillName.value = "";
   inputBillAmount.value = "";
@@ -87,6 +90,48 @@ function removeRoomate(event){
 function removeBill(event) {
 	event.preventDefault();
 
+	var selectedBill = document.getElementById('selectedBill');
+	var targetMonth = document.getElementById('monthName');
+	var currentBillList = document.getElementById("billList");
+
+	for (var i = 0; i < allMonths.length; i++) {
+		var billObjectLocation = allMonths[i].billNameArray.indexOf(selectedBill.value);
+
+		for (var j = 0; j < allMonths[i].billObjectArray.length; j++) {
+
+			if(selectedBill.value === allMonths[i].billNameArray[j]){
+				if (billObjectLocation > -1) {
+					// console.log('i = ' + i);
+					// console.log('Bill chosen: ' + selectedBill.value);
+					// console.log('object array: ' + allMonths[i].billObjectArray);
+					// console.log('name array: ' + allMonths[i].billNameArray);
+					// console.log('amount array: ' + allMonths[i].billAmountArray);
+					// console.log('Grand total: ' + allMonths[i].grandTotal);
+
+					allMonths[i].grandTotal -= allMonths[i].billAmountArray[j];
+					allMonths[i].billObjectArray.splice(billObjectLocation, 1);
+					allMonths[i].billNameArray.splice(billObjectLocation, 1);
+					allMonths[i].billAmountArray.splice(billObjectLocation, 1);
+
+
+					var child = document.getElementById(selectedBill.value + '-li')
+					currentBillList.removeChild(child);
+
+					child = document.getElementById(selectedBill.value);
+					selectedBill.removeChild(child);
+
+					// console.log('i = ' + i);
+					// console.log('Bill chosen: ' + selectedBill.value);
+					// console.log('object array: ' + allMonths[i].billObjectArray);
+					// console.log('name array: ' + allMonths[i].billNameArray);
+					// console.log('amount array: ' + allMonths[i].billAmountArray);
+					// console.log('Grand total: ' + allMonths[i].grandTotal);
+
+					break;
+				}
+			}
+		}
+	}
 }
 
 function refreshGraphs(event, location) {
