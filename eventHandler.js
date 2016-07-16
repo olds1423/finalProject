@@ -17,17 +17,12 @@ function newBillEvent(event){
 	billOption.id = inputBillName.value;
 	billSelector.appendChild(billOption);
 
-
-  // push the bill object into the correct month using the current month YES
-
-  // tracker.billObjectArray.BillObject.pushNameAndAmountToArray();
   var newListItem = document.createElement("li");
   newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value;
 	newListItem.id = inputBillName.value + '-li';
   currentBillsList.appendChild(newListItem);
   inputBillName.value = "";
   inputBillAmount.value = "";
-//
 }
 
 function newRoommateEvent(event){
@@ -38,7 +33,6 @@ function newRoommateEvent(event){
 	var roommateSelector = document.getElementById('selectedRoomate');
 
   var child = document.createElement("li");
-	tracker.roommateNameArray.push(inputRoommate.value);
 	child.textContent = inputRoommate.value;
 	child.id = inputRoommate.value + '-li';
 
