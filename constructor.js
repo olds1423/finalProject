@@ -14,15 +14,17 @@ var november = new Month('november');
 var december = new Month('december');
 
 function startUpCheckStorage() {
+  var newBill = [];
   if (localStorage.storedBills) {
     var parsedBills = JSON.parse(localStorage.getItem('storedBills'));
-  // console.log(parsedBills);
-    for (var i = 0; i < parsedBills.length; i++) {
-      new BillObject(parsedBills[i].billMonthName, parsedBills[i].billAmount, parsedBills[i].billFrequency, parsedBills[i].billName);
+    for (var each of parsedBills) {
+      newBill.push(new BillObject(each.billMonthName, each.billAmount, each.billFrequency, each.billName));
+    }
+    for (var item of newBill) {
+      item.findAndUpdateMonth();
     }
   }
 }
-startUpCheckStorage();
 
 function Month(name){
   this.monthName = name;
@@ -62,7 +64,6 @@ var helperFunctions = {
     }
     var strAllMonthsBillObjects = JSON.stringify(tempBillObjArray);
     localStorage.setItem('storedBills', strAllMonthsBillObjects);
-    console.log(localStorage.storedBills);
   },
 
   doAllMethods: function (object){
@@ -89,5 +90,7 @@ BillObject.prototype.findAndUpdateMonth = function () {
     }
   }
 };
+
+startUpCheckStorage();
 
 //end
