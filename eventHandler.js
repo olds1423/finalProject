@@ -13,12 +13,12 @@ function newBillEvent(event){
 	var billSelector = document.getElementById('selectedBill');
 	var billOption = document.createElement('option');
 	billOption.value = inputBillName.value;
-	billOption.textContent = inputBillName.value;
+	billOption.textContent = inputBillName.value + " - " + currentMonth.value;
 	billOption.id = inputBillName.value;
 	billSelector.appendChild(billOption);
 
   var newListItem = document.createElement("li");
-  newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value;
+  newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value + " - " + currentMonth.value;
 	newListItem.id = inputBillName.value + '-li';
   currentBillsList.appendChild(newListItem);
   inputBillName.value = "";
@@ -35,13 +35,13 @@ function newRoommateEvent(event){
 	var roommateSelector = document.getElementById('selectedRoomate');
 
   var child = document.createElement("li");
-	child.textContent = inputRoommate.value;
+	child.textContent = inputRoommate.value + " - " + targetMonth.value;
 	child.id = inputRoommate.value + '-li';
 
 	var roomateOption = document.createElement('option');
 	roomateOption.value = inputRoommate.value;
 	roomateOption.id = inputRoommate.value
-	roomateOption.textContent = inputRoommate.value;
+	roomateOption.textContent = inputRoommate.value + " - " + targetMonth.value;
 
 
 
