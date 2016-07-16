@@ -35,13 +35,13 @@ function newRoommateEvent(event){
 	var roommateSelector = document.getElementById('selectedRoomate');
 
   var child = document.createElement("li");
-	child.textContent = inputRoommate.value;
+	child.textContent = inputRoommate.value + " - " + targetMonth.value;
 	child.id = inputRoommate.value + '-li';
 
 	var roomateOption = document.createElement('option');
 	roomateOption.value = inputRoommate.value;
 	roomateOption.id = inputRoommate.value
-	roomateOption.textContent = inputRoommate.value;
+	roomateOption.textContent = inputRoommate.value + " - " + targetMonth.value;
 
 
 
