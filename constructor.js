@@ -1,5 +1,29 @@
 var allMonths = [];
 
+var january = new Month('january');
+var february = new Month('february');
+var march = new Month('march');
+var april = new Month('april');
+var may = new Month('may');
+var june = new Month('june');
+var july = new Month('july');
+var august = new Month('august');
+var september = new Month('september');
+var october = new Month('october');
+var november = new Month('november');
+var december = new Month('december');
+
+function startUpCheckStorage() {
+  if (localStorage.storedBills) {
+    var parsedBills = JSON.parse(localStorage.getItem('storedBills'));
+  // console.log(parsedBills);
+    for (var i = 0; i < parsedBills.length; i++) {
+      new BillObject(parsedBills[i].billMonthName, parsedBills[i].billAmount, parsedBills[i].billFrequency, parsedBills[i].billName);
+    }
+  }
+}
+startUpCheckStorage();
+
 function Month(name){
   this.monthName = name;
   this.billObjectArray = [];
@@ -28,32 +52,28 @@ var helperFunctions = {
     return this.totalRentAndBills /= divisor;
   },
 
+  pushToLocalStorage: function() {
+    for (var i = 0; i < allMonths.length; i++) {
+      var billObj = allMonths[i].billObjectArray;
+      for (var i = 0; i < allMonths.length; i++) {
+      var strAllMonthsBillObjects = JSON.stringify(billObj);
+      localStorage.setItem('storedBills', strAllMonthsBillObjects);
+      }
+    }
+  },
+
   doAllMethods: function (object){
     this.addAllBills(object);
     this.divideRentEvenly(object);
     return object.totalRentAndBills;
   },
-}
-
-var january = new Month('january');
-var february = new Month('february');
-var march = new Month('march');
-var april = new Month('april');
-var may = new Month('may');
-var june = new Month('june');
-var july = new Month('july');
-var august = new Month('august');
-var september = new Month('september');
-var october = new Month('october');
-var november = new Month('november');
-var december = new Month('december');
-
+};
 
 function BillObject(month, amount, frequency, bill) {   //bill constructor
-  this.billMonthName = month;
-  this.billAmount = parseInt(amount);
-  this.billFrequency = parseInt(frequency);      //frequency inside of month
-  this.billName = bill;
+  this.billMonthName = month || '';
+  this.billAmount = parseInt(amount) || 0;
+  this.billFrequency = parseInt(frequency) || 0;      //frequency inside of month
+  this.billName = bill || '';
 }
 
 BillObject.prototype.findAndUpdateMonth = function () {

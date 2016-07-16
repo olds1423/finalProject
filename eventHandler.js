@@ -23,6 +23,8 @@ function newBillEvent(event){
   currentBillsList.appendChild(newListItem);
   inputBillName.value = "";
   inputBillAmount.value = "";
+
+  helperFunctions.pushToLocalStorage();
 }
 
 function newRoommateEvent(event){
@@ -52,6 +54,8 @@ function newRoommateEvent(event){
 	roommateSelector.appendChild(roomateOption);
   currentRoommateList.appendChild(child);
   inputRoommate.value = "";
+
+  helperFunctions.pushToLocalStorage();
 }
 
 function removeRoomate(event){
@@ -79,6 +83,7 @@ function removeRoomate(event){
 			}
 		}
 	}
+  helperFunctions.pushToLocalStorage();
 }
 
 function removeBill(event) {
@@ -126,6 +131,7 @@ function removeBill(event) {
 			}
 		}
 	}
+  helperFunctions.pushToLocalStorage();
 }
 
 function refreshGraphs(event, location) {
@@ -142,8 +148,6 @@ function refreshGraphs(event, location) {
 
 
 }
-//LISTEN FOR EVENT AND RESPOND
-
 
 var newBillButton = document.getElementById("nb");
 newBillButton.addEventListener("click", newBillEvent);
@@ -156,5 +160,6 @@ refreshButton.addEventListener("click", refreshGraphs);
 
 var removeRoomateButton = document.getElementById('removeRoomateBbutton');
 removeRoomateButton.addEventListener('click', removeRoomate);
+
 var removeBillButton = document.getElementById('removeBillButton');
 removeBillButton.addEventListener('click', removeBill);
