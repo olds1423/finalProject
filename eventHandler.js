@@ -1,5 +1,4 @@
 //EVENT HANDLING SECTION
-// trying to get the value of newRoomate into the list
 function newBillEvent(event){
   event.preventDefault();
   var inputBillName = document.getElementById("billName");
@@ -100,12 +99,6 @@ function removeBill(event) {
 
 			if(selectedBill.value === allMonths[i].billNameArray[j]){
 				if (billObjectLocation > -1) {
-					// console.log('i = ' + i);
-					// console.log('Bill chosen: ' + selectedBill.value);
-					// console.log('object array: ' + allMonths[i].billObjectArray);
-					// console.log('name array: ' + allMonths[i].billNameArray);
-					// console.log('amount array: ' + allMonths[i].billAmountArray);
-					// console.log('Grand total: ' + allMonths[i].grandTotal);
 
 					allMonths[i].grandTotal -= allMonths[i].billAmountArray[j];
 					allMonths[i].billObjectArray.splice(billObjectLocation, 1);
@@ -118,14 +111,6 @@ function removeBill(event) {
 
 					child = document.getElementById(selectedBill.value);
 					selectedBill.removeChild(child);
-
-					// console.log('i = ' + i);
-					// console.log('Bill chosen: ' + selectedBill.value);
-					// console.log('object array: ' + allMonths[i].billObjectArray);
-					// console.log('name array: ' + allMonths[i].billNameArray);
-					// console.log('amount array: ' + allMonths[i].billAmountArray);
-					// console.log('Grand total: ' + allMonths[i].grandTotal);
-
 					break;
 				}
 			}
