@@ -14,19 +14,41 @@ var november = new Month('november');
 var december = new Month('december');
 
 function startUpCheckStorage() {
-  var tempParsedBillObject = [];
+  var newBill = [];
   if (localStorage.storedBills) {
     var parsedBills = JSON.parse(localStorage.getItem('storedBills'));
-    for (var i = 0; i < parsedBills.length; i++) {
-      tempParsedBillObject.push(new BillObject(parsedBills[i].billMonthName, parsedBills[i].billAmount, parsedBills[i].billFrequency, parsedBills[i].billName));
+    for (var each of parsedBills){
+      newBill.push(new BillObject(each.billMonthName, each.billAmount, each.billFrequency, each.billName));
     }
-    // for (var j = 0; j < tempParsedBillObject.length; j++) {
-    //   tempParsedBillObject[j].findAndUpdateMonth();
-    //   console.log(tempParsedBillObject[j].BillObject);
-    // }
+    for (var item of newBill) {
+      item.findAndUpdateMonth();
+    }
+  }
+  if (localStorage.storedBills) {
+    for (var i = 0; i < allMonths.length; i++) {
+      var billObjectLocation = allMonths[i].billNameArray.indexOf(selectedBill.value);
+      for (var j = 0; j < allMonths[i].billNameArray.length; j++) {
+        // console.log(allMonths[i]);
+        // console.log(allMonths[i].billObjectArray);
+        var currentObject = allMonths[i].billObjectArray[j];
+        var billSelector = document.getElementById('selectedBill');
+      	var billOption = document.createElement('option');
+      	billOption.value = currentObject.billName;
+      	billOption.textContent = currentObject.billName + " - " + currentObject.billMonthName;
+      	billOption.id = currentObject.billName;
+      	billSelector.appendChild(billOption);
+
+        var currentBillsList = document.getElementById("billList");
+        var newListItem = document.createElement("li");
+        newListItem.textContent = currentObject.billName + " $" + currentObject.billAmount + " - " + currentObject.billMonthName;
+        newListItem.id = currentObject.billName + '-li';
+        currentBillsList.appendChild(newListItem);
+        console.log(currentObject);
+        console.log(currentObject.billName);
+      }
+    }
   }
 }
-startUpCheckStorage();
 
 
 function Month(name){
@@ -93,5 +115,7 @@ BillObject.prototype.findAndUpdateMonth = function () {
     }
   }
 };
+
+startUpCheckStorage();
 
 //end
