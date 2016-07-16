@@ -1,14 +1,3 @@
-var tracker = {
-  monthNameArray: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
-
-  billObjectArray: [],      //array of all bill obejcts
-  roommateNameArray: [],
-  billNameArray: [],        //array to hold chart data
-  billAmountArray: [],      //array to hold chart data
-  totalRentAndBills: 0,
-  monthObjectArray: []
-};
-
 var allMonths = [];
 
 function Month(name){
@@ -22,7 +11,6 @@ function Month(name){
 }
 
 Month.prototype.addAllBills = function() {
-
 
 };
 
@@ -66,23 +54,7 @@ function BillObject(month, amount, frequency, bill) {   //bill constructor
   this.billAmount = parseInt(amount);
   this.billFrequency = parseInt(frequency);      //frequency inside of month
   this.billName = bill;
-  tracker.billObjectArray.push(this);   //push newly instantiated billobject to array in tracker
 }
-
-
-
-BillObject.prototype.divideRentEvenly = function() {
-  var divisor = 0;
-  for (each in tracker.roommateNameArray) {
-    divisor += 1;
-  }
-  tracker.totalRentAndBills /= divisor;
-};
-
-BillObject.prototype.pushNameAndAmountToArray = function() {
-  tracker.billNameArray.push(this.billName);
-  tracker.billAmountArray.push(this.billAmount);  //add this bill to rent to get total sum of rent and bill
-};
 
 BillObject.prototype.findAndUpdateMonth = function () {
   for (var i = 0; i < allMonths.length; i++) {
@@ -94,18 +66,5 @@ BillObject.prototype.findAndUpdateMonth = function () {
     }
   }
 };
-
-BillObject.prototype.doAllMethods = function() {
-  this.addAllBills();
-  this.divideRentEvenly();
-  this.pushNameAndAmountToArray();
-  this.findAndUpdateMonth();
-};
-
-
-
-//Months:
-
-
 
 //end
