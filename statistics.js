@@ -8,7 +8,7 @@ function buildGraphs1(event){
   event.preventDefault();
   console.log(allMonths);
 
-  var BarData = {
+  var BarData1 = {
      labels: allMonthsForReference,
      datasets: [
        {
@@ -27,10 +27,42 @@ function buildGraphs1(event){
 
     var chart = new Chart(ctx, {
      type: 'bar',
-     data: BarData
+     data: BarData1
    });
 }
 
+function buildGraphs2(event) {
+  event.preventDefault();
+  var dataArray = [];
+  var object = document.getElementById("whichGraph2").value;
+  var roommateTotal = parseInt(document.getElementById("howManyMates").value);
+  console.log(object);
+  for (var i = 0; i < allMonths.length; i++) {
+    dataArray[i] = allMonths[i].grandTotal / roommateTotal;
+    console.log(dataArray[i]);
+  }
+  var BarData2 = {
+     labels: allMonthsForReference,
+     datasets: [
+       {
+         data: dataArray,
+         backgroundColor: randColor(dataArray),
+         borderColor: '#000000',
+         borderWidth: 3,
+         hoverBackgroundColor: '#000000',
+         hoverBorderColor: '#ffffff',
+       }
+     ]
+   };
+
+    var canvas = document.getElementById('howManyMates');
+    var ctx = canvas.getContext('2d');
+
+    var chart = new Chart(ctx, {
+      type: 'bar',
+      data: BarData2
+    });
+}
 
 // function buildGraphs1(event) {
 // 	event.preventDefault();
@@ -84,7 +116,7 @@ function buildGraphs1(event){
 //         hoverBorderColor: '#ffffff',
 //       }
 //     ]
-//   };
+  // };
 //
 //   var canvas = document.getElementById('graph1');
 //   var ctx = canvas.getContext('2d');
@@ -96,27 +128,7 @@ function buildGraphs1(event){
 // }
 //
 // function makeBarChartAllStatistics(object) {
-//   var BarData = {
-//     labels: object.billNameArray,
-//     datasets: [
-//       {
-//         data: object.billAmountArray,
-//         backgroundColor: randColor(object.billObjectArray),
-//         borderColor: '#000000',
-//         borderWidth: 3,
-//         hoverBackgroundColor: '#000000',
-//         hoverBorderColor: '#ffffff',
-//       }
-//     ]
-//   };
 //
-//   var canvas = document.getElementById('graph2');
-//   var ctx = canvas.getContext('2d');
-//
-//   var chart = new Chart(ctx, {
-//     type: 'bar',
-//     data: BarData
-//   });
 // }
 //
 // function main(){
@@ -133,11 +145,9 @@ function buildGraphs1(event){
 var firstSectionGraphs = document.getElementById('refGraphs1');
 firstSectionGraphs.addEventListener("click", buildGraphs1);
 
-var buildGraphs2 = document.getElementById('refGraphs2');
-buildGraphs2.addEventListener("click", buildGraphs2);
+var secondSectionGraphs = document.getElementById('refGraphs2');
+secondSectionGraphs.addEventListener("click", buildGraphs2);
 
-var buildGraphs3 = document.getElementById('refGraphs3');
-buildGraphs3.addEventListener("click", buildGraphs3);
 
 
 
