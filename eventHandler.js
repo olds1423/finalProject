@@ -13,12 +13,12 @@ function newBillEvent(event){
 	var billSelector = document.getElementById('selectedBill');
 	var billOption = document.createElement('option');
 	billOption.value = inputBillName.value;
-	billOption.textContent = inputBillName.value;
+	billOption.textContent = inputBillName.value + " - " + currentMonth.value;
 	billOption.id = inputBillName.value;
 	billSelector.appendChild(billOption);
 
   var newListItem = document.createElement("li");
-  newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value;
+  newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value + " - " + currentMonth.value;
 	newListItem.id = inputBillName.value + '-li';
   currentBillsList.appendChild(newListItem);
   inputBillName.value = "";

@@ -14,15 +14,20 @@ var november = new Month('november');
 var december = new Month('december');
 
 function startUpCheckStorage() {
+  var tempParsedBillObject = [];
   if (localStorage.storedBills) {
     var parsedBills = JSON.parse(localStorage.getItem('storedBills'));
-  // console.log(parsedBills);
     for (var i = 0; i < parsedBills.length; i++) {
-      new BillObject(parsedBills[i].billMonthName, parsedBills[i].billAmount, parsedBills[i].billFrequency, parsedBills[i].billName);
+      tempParsedBillObject.push(new BillObject(parsedBills[i].billMonthName, parsedBills[i].billAmount, parsedBills[i].billFrequency, parsedBills[i].billName));
     }
+    // for (var j = 0; j < tempParsedBillObject.length; j++) {
+    //   tempParsedBillObject[j].findAndUpdateMonth();
+    //   console.log(tempParsedBillObject[j].BillObject);
+    // }
   }
 }
 startUpCheckStorage();
+
 
 function Month(name){
   this.monthName = name;
@@ -62,7 +67,6 @@ var helperFunctions = {
     }
     var strAllMonthsBillObjects = JSON.stringify(tempBillObjArray);
     localStorage.setItem('storedBills', strAllMonthsBillObjects);
-    console.log(localStorage.storedBills);
   },
 
   doAllMethods: function (object){
