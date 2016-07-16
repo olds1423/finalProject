@@ -56,8 +56,8 @@ var helperFunctions = {
     for (var i = 0; i < allMonths.length; i++) {
       var billObj = allMonths[i].billObjectArray;
       for (var i = 0; i < allMonths.length; i++) {
-      var strAllMonthsBillObjects = JSON.stringify(billObj);
-      localStorage.setItem('storedBills', strAllMonthsBillObjects);
+        var strAllMonthsBillObjects = JSON.stringify(billObj);
+        localStorage.setItem('storedBills', strAllMonthsBillObjects);
       }
     }
   },
