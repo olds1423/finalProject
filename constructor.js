@@ -53,13 +53,16 @@ var helperFunctions = {
   },
 
   pushToLocalStorage: function() {
+    var tempBillObjArray = [];
     for (var i = 0; i < allMonths.length; i++) {
-      var billObj = allMonths[i].billObjectArray;
-      for (var i = 0; i < allMonths.length; i++) {
-      var strAllMonthsBillObjects = JSON.stringify(billObj);
-      localStorage.setItem('storedBills', strAllMonthsBillObjects);
+      var billObjArr = allMonths[i].billObjectArray;
+      for (var j = 0; j < allMonths[i].billObjectArray.length; j++) {
+        tempBillObjArray.push(billObjArr[j]);
       }
     }
+    var strAllMonthsBillObjects = JSON.stringify(tempBillObjArray);
+    localStorage.setItem('storedBills', strAllMonthsBillObjects);
+    console.log(localStorage.storedBills);
   },
 
   doAllMethods: function (object){
