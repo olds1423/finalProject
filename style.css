@@ -1,0 +1,359 @@
+body{
+	background-image: url(assets/style/concrete-texture-large.jpg);
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Mitr', sans-serif;
+}
+header{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(186, 171, 130, .8);
+	border: 3px solid rgba(166, 43, 39, 1);
+	box-sizing: border-box;
+
+	width: 1000px;
+	height: 50px;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px;
+}
+main{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+	background-color: rgba(32, 97, 204, .6);
+	border: 3px solid rgba(180, 35, 35, 1);
+	border-radius: 10px;
+	padding: 10px;
+	width: 1000px;
+	margin: 10px;
+
+	box-sizing: border-box;
+}
+article{}
+section{}
+nav{}
+form{}
+canvas{}
+label{
+	margin: 5px;
+	font-size: 20px;
+	color: white;
+	padding: 2px;
+
+}
+input{
+	background-color: rgba(59, 91, 105, .8);
+	border: 2px solid	rgba(5, 171, 101, 1);
+	color: white;
+	margin: 5px;
+	height: 30px;
+	width: 250px;
+	border-radius: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+
+
+}
+select{
+	background-color: rgba(59, 91, 105, .8);
+	border: 2px solid	rgba(5, 171, 101, 1);
+	color: white;
+	margin: 10px;
+	height: 30px;
+	width: 250px;
+	border-radius: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+
+}
+
+ul{}
+li{}
+h1{}
+h2{}
+h3{}
+p{}
+a{
+	color: white;
+	text-decoration: none;
+}
+a:hover{
+	color: rgba(5, 171, 101, 1);
+}
+#connect{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 20px;
+	width: 100px;
+}
+#githubLink{
+	height: 35px;
+	width: 35px;
+
+}
+#github{
+	width: 35px;
+	height: 35px;
+
+}
+#navbar{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+
+	background-color: rgba(59, 91, 105, .8);
+	border: 2px solid	rgba(5, 171, 101, 1);
+
+	height: 30px;
+	width: 500px;
+	margin: 10px;
+	border-radius: 10px;
+}
+#login{
+	color: black;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+#landingMain{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+	background-color: rgba(32, 97, 204, .6);
+	border: 3px solid rgba(180, 35, 35, 1);
+	border-radius: 10px;
+	padding: 10px;
+	width: 1000px;
+	margin: 10px;
+}
+#genInfo{
+	color: white;
+	width: 500px
+	padding: 5px;
+}
+#pricing{
+	color: white;
+	padding: 5px;
+
+}
+#updateHistory{
+	color: white;
+	list-style: none;
+	padding: 5px;
+	margin: 5px;
+	box-sizing: border-box;
+
+}
+#updateForm{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.formSpot:hover{
+	background-color: rgba(186, 171, 130, .7);
+	border: 2px solid rgba(166, 43, 39, 1);
+	color: black;
+}
+#inptTntTitle{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+#currentRoommates{}
+#remRmmt{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+#remove-roomate-button:hover{
+	background-color: rgba(186, 171, 130, .7);
+	border: 2px solid rgba(166, 43, 39, 1);
+	color: black;
+	text-align: center;
+	font-size: 20px;
+	height: 30px;
+	border-radius: 5px;
+}
+#remBill{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#remove-bill-button:hover{
+	background-color: rgba(186, 171, 130, .7);
+	border: 2px solid rgba(166, 43, 39, 1);
+	color: black;
+	text-align: center;
+	font-size: 20px;
+	height: 30px;
+	border-radius: 5px;
+}
+#fields{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+#month{}
+#roommateName{}
+#newRoomate{}
+#billName{}
+#billAmount{}
+#newBill{}
+#monthName{
+	margin: 5px;
+	font-size: 20px;
+	height: 30px;
+	width: 250px;
+	border-radius: 5px;
+}
+.submit{
+	background-color: rgba(186, 171, 130, .7);
+	border: 2px solid rgba(166, 43, 39, 1);
+	color: black;
+	text-align: center;
+	font-size: 20px;
+	margin: 10px;
+	height: 30px;
+	width: 300px;
+	border-radius: 5px;
+}
+.submit:hover{
+	background-color: rgba(59, 91, 105, .8);
+	border: 2px solid	rgba(5, 171, 101, 1);
+	color: white;
+}
+#nr{
+	width: 200px;
+}
+#nb{
+	width: 100px;
+}
+#currentRoommates{}
+#roommateList{
+	list-style: none;
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+#roommateList.li{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+#rmmtTitle{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+#currentBills{}
+#billList{
+	list-style: none;
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+#billList.li{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+#bllTitle{
+	color: white;
+	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+#formGraphs {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 1000px;
+	height: 500px;
+	box-sizing: border-box;
+}
+#graphs{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 1000px;
+	min-height: 500px;
+	margin: 10px;
+	padding: 20px;
+	box-sizing: border-box;
+
+	background-color: rgba(186, 171, 130, .6);
+	border: 3px solid rgba(166, 43, 39, 1);
+	border-radius: 10px;
+}
+#controls{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	width: 700px;
+}
+#refGraphs{
+	background-color: rgba(59, 91, 105, .8);
+	border: 2px solid	rgba(5, 171, 101, 1);
+}
+#refGraphs:hover{
+	background-color: rgba(186, 171, 130, .7);
+	border: 2px solid rgba(166, 43, 39, 1);
+}
+
+#longTermGaphs{}
+.statsPageGraphs{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 1000px;
+	min-height: 500px;
+	margin: 10px;
+	padding: 20px;
+	box-sizing: border-box;
+
+	background-color: rgba(32, 97, 204, .6);
+	border: 3px solid rgba(180, 35, 35, 1);
+	border-radius: 10px;
+}
+#graph1{}
+#graph2{}
+#graph3{}
+#graph4{}
+#graph5{}
+#graph6{}
+#graph7{}
+#graph8{}
+
+
+
+
+
+
+/*end*/

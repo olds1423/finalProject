@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Mental Rental - Add Information</title>
+		<link rel="stylesheet" href="style.css" charset="utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Mitr" rel="stylesheet">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js">
+
+		</script>
+	</head>
+	<body>
+		<header>
+			<section id="connect">
+				<p>Connect:</p>
+				<a id="githubLink"href="https://github.com/olds1423/finalProject"><img id="github"  src="assets/style/github.png"/></a>
+			</section>
+
+			<!-- Title -->
+			<h1>Add/Update Information</h1>
+
+			<!-- login -->
+			<a id="login">Log In/ Register</a>
+		</header>
+
+		<nav id="navbar">
+
+			<a id="formLink" href="index.html">Home</a>
+			<a id="statsLink" href="statistics.html">All Statistics</a>
+
+		</nav>
+
+		<main>
+			<form id='updateForm' method="post">
+
+				<h2 id="inptTntTitle">Input Rent Data</h2> <br>
+
+				<label for="monthName">Month:</label>
+				<select class='formSpot' id="monthName" name="monthName">
+					<option class='formSpot' value="january">January</option>
+					<option class='formSpot' value="february">February</option>
+					<option class='formSpot' value="march">March</option>
+					<option class='formSpot' value="april">April</option>
+					<option class='formSpot' value="may">May</option>
+					<option class='formSpot' value="june">June</option>
+					<option class='formSpot' value="july">July</option>
+					<option class='formSpot' value="august">August</option>
+					<option class='formSpot' value="september">September</option>
+					<option class='formSpot' value="october">October</option>
+					<option class='formSpot' value="november">November</option>
+					<option class='formSpot' value="december">December</option>
+				</select>
+
+					<label for="billName">Bill Name:</label>
+					<input class='formSpot' id='billName' type="text" name="billName" value="">
+
+					<label for="billAmount">Bill Amount:</label>
+					<input class='formSpot' id='billAmount' type="number" name="billAmount" value="" min="0">
+
+					<label for="billFrequency">Bill Frequency:</label>
+					<select class='formSpot' id="billFrequency" name="monthName">
+						<option class='formSpot' value="n/a">Select</option>
+						<option class='formSpot' value="1">One time per month</option>
+						<option class='formSpot' value="2">Two times per month</option>
+						<option class='formSpot' value="3">Three times per month</option>
+						<option class='formSpot' value="4">Four times per month</option>
+
+					</select>
+
+
+					<label for="roommateName">New Roommate:</label>
+		      <input class='formSpot' id="newRoomate" type="text" name="roommateName" value="" >
+
+
+
+				<input class='submit' id='nr' type="submit" value="New Roommate">
+				<input class='submit' id='nb' type="submit" value="New Bill">
+
+			</form>
+
+			<section id="currentRoommates">
+				<h2 id="rmmtTitle">Current Roomates</h2>
+				<ul id="roommateList">
+
+				</ul>
+
+				<section id='remRmmt'>
+					<select class='formSpot' id="selectedRoomate" name="remRmmt">
+						<input id='removeRoomateBbutton' type="submit" name="name" value="Remove Roomate">
+				</section>
+
+				</select>
+			</section>
+
+			<section id="currentBills">
+				<h2 id="bllTitle">Current Bills</h2>
+				<ul id="billList">
+
+				</ul>
+
+				<section id='remBill'>
+					<select class='formSpot' id="selectedBill" name='remBill'>
+						<input id='removeBillButton' type="submit" name="name" value="Remove Bill">
+				</section>
+
+
+				</select>
+			</section>
+
+		</main>
+
+		<section id="graphs">
+
+			<section id="controls">
+
+				<input id='refGraphs' type="submit" value="Refresh Graphs">
+
+				<select id="whichGraph" name="whichGraph">
+					<option class='formSpot' value="january">January</option>
+					<option class='formSpot' value="february">February</option>
+					<option class='formSpot' value="march">March</option>
+					<option class='formSpot' value="april">April</option>
+					<option class='formSpot' value="may">May</option>
+					<option class='formSpot' value="june">June</option>
+					<option class='formSpot' value="july">July</option>
+					<option class='formSpot' value="august">August</option>
+					<option class='formSpot' value="september">September</option>
+					<option class='formSpot' value="october">October</option>
+					<option class='formSpot' value="november">November</option>
+					<option class='formSpot' value="december">December</option>
+				</select>
+
+			</section>
+
+			<section id="formGraphs">
+				<div>
+						<canvas id="graph1" width="300" height="300"></canvas>
+				</div>
+				<div>
+					<canvas id="graph2" width="300" height="300"></canvas>
+				</div>
+			</section>
+
+		</section>
+
+		<script type="text/javascript" src='rand-color.js'></script>
+		<script type='text/javascript' src='constructor.js'></script>
+		<script type='text/javascript' src='eventHandler.js'></script>
+		<script type="text/javascript" src='app.js'></script>
+	</body>
+</html>
