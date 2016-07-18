@@ -17,11 +17,16 @@ function startUpCheckStorage() {
   var newBill = [];
   if (localStorage.storedBills) {
     var parsedBills = JSON.parse(localStorage.getItem('storedBills'));
-    for (var each of parsedBills){
-      newBill.push(new BillObject(each.billMonthName, each.billAmount, each.billFrequency, each.billName));
+    for (var i = 0; i < parsedBills.length; i++){
+			var currentBill = new BillObject(parsedBills[i].billMonthName, parsedBills[i].billAmount, parsedBills[i].billFrequency, parsedBills[i].billName);
+			newBill.push(currentBill);
+			// new BillObject(each.billMonthName, each.billAmount, each.billFrequency, each.billName)
     }
-    for (var item of newBill) {
-      item.findAndUpdateMonth();
+		console.log(newBill);
+    for (var j = 0; j < newBill.length; j++) {
+			// console.log(newBill);
+			// console.log(item);
+      newBill[j].findAndUpdateMonth();
     }
   }
   if (localStorage.storedBills) {
@@ -30,8 +35,10 @@ function startUpCheckStorage() {
         // console.log(allMonths[i]);
         // console.log(allMonths[i].billObjectArray);
         var currentObject = allMonths[i].billObjectArray[j];
-        var billSelector = document.getElementById('selectedBill');
+				var parent = document.getElementById('selectedBill')
       	var billOption = document.createElement('option');
+				console.log(document.getElementById('selectedBill'));
+				console.log(billOption);
       	billOption.value = currentObject.billName;
       	billOption.textContent = currentObject.billName + " - " + currentObject.billMonthName;
       	billOption.id = currentObject.billName;

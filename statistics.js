@@ -4,6 +4,8 @@ function buildGraphs1(event){
   var totalBillsPerMonth = [];
   for (var i = 0; i < allMonths.length; i++) {
     totalBillsPerMonth[i] = allMonths[i].grandTotal;
+		console.log(document.getElementById('formLink'));
+
   }
   event.preventDefault();
 
