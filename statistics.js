@@ -6,7 +6,6 @@ function buildGraphs1(event){
     totalBillsPerMonth[i] = allMonths[i].grandTotal;
   }
   event.preventDefault();
-  console.log(allMonths);
 
   var BarData1 = {
      labels: allMonthsForReference,
@@ -37,10 +36,11 @@ function buildGraphs2(event) {
   var object = document.getElementById("whichGraph2").value;
   var roommateTotal = parseInt(document.getElementById("howManyMates").value);
   console.log(object);
+	console.log(roommateTotal);
   for (var i = 0; i < allMonths.length; i++) {
     dataArray[i] = allMonths[i].grandTotal / roommateTotal;
-    console.log(dataArray[i]);
   }
+	console.log(dataArray);
   var BarData2 = {
      labels: allMonthsForReference,
      datasets: [

@@ -26,7 +26,6 @@ function startUpCheckStorage() {
   }
   if (localStorage.storedBills) {
     for (var i = 0; i < allMonths.length; i++) {
-      var billObjectLocation = allMonths[i].billNameArray.indexOf(selectedBill.value);
       for (var j = 0; j < allMonths[i].billNameArray.length; j++) {
         // console.log(allMonths[i]);
         // console.log(allMonths[i].billObjectArray);
@@ -38,13 +37,12 @@ function startUpCheckStorage() {
       	billOption.id = currentObject.billName;
       	billSelector.appendChild(billOption);
 
+
         var currentBillsList = document.getElementById("billList");
         var newListItem = document.createElement("li");
         newListItem.textContent = currentObject.billName + " $" + currentObject.billAmount + " - " + currentObject.billMonthName;
         newListItem.id = currentObject.billName + '-li';
         currentBillsList.appendChild(newListItem);
-        console.log(currentObject);
-        console.log(currentObject.billName);
       }
     }
   }
