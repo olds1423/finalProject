@@ -1,5 +1,7 @@
 //EVENT HANDLING SECTION
 function newBillEvent(event){
+
+
   event.preventDefault();
   var inputBillName = document.getElementById("billName");
   var inputBillAmount = document.getElementById("billAmount");
@@ -9,12 +11,16 @@ function newBillEvent(event){
   var bill = new BillObject(currentMonth.value, inputBillAmount.value, billFrequency.value, inputBillName.value);
   bill.findAndUpdateMonth();
 
+
+
 	var billSelector = document.getElementById('selectedBill');
 	var billOption = document.createElement('option');
 	billOption.value = inputBillName.value;
 	billOption.textContent = inputBillName.value + " - " + currentMonth.value;
 	billOption.id = inputBillName.value;
 	billSelector.appendChild(billOption);
+
+
 
   var newListItem = document.createElement("li");
   newListItem.textContent = inputBillName.value + " $" + inputBillAmount.value + " - " + currentMonth.value;
@@ -23,7 +29,11 @@ function newBillEvent(event){
   inputBillName.value = "";
   inputBillAmount.value = "";
 
+
+
   helperFunctions.pushToLocalStorage();
+
+
 }
 
 function newRoommateEvent(event){
@@ -33,9 +43,13 @@ function newRoommateEvent(event){
   var currentRoommateList = document.getElementById("roommateList");
 	var roommateSelector = document.getElementById('selectedRoomate');
 
+
+
   var child = document.createElement("li");
 	child.textContent = inputRoommate.value + " - " + targetMonth.value;
 	child.id = inputRoommate.value + '-li';
+
+
 
 	var roomateOption = document.createElement('option');
 	roomateOption.value = inputRoommate.value;
@@ -44,17 +58,23 @@ function newRoommateEvent(event){
 
 
 
+
+
   for (var i = 0; i < allMonths.length; i++) {
     if(allMonths[i].monthName === targetMonth.value){
       allMonths[i].roommateNameArray.push(inputRoommate.value);
+
     }
+
 
   }
 	roommateSelector.appendChild(roomateOption);
   currentRoommateList.appendChild(child);
   inputRoommate.value = "";
 
-  helperFunctions.pushToLocalStorage();
+  helperFunctions.pushToLocalStorage
+
+
 }
 
 function removeRoomate(event){
@@ -63,6 +83,8 @@ function removeRoomate(event){
 	var selectedRoomate = document.getElementById('selectedRoomate');
 	var targetMonth = document.getElementById('monthName');
 	var currentRoommateList = document.getElementById("roommateList");
+
+
 
 	for (var i = 0; i < allMonths.length; i++) {
 		var nameLocation = allMonths[i].roommateNameArray.indexOf(selectedRoomate.value);
@@ -82,6 +104,8 @@ function removeRoomate(event){
 			}
 		}
 	}
+
+
   helperFunctions.pushToLocalStorage();
 }
 
@@ -116,6 +140,8 @@ function removeBill(event) {
 			}
 		}
 	}
+
+
   helperFunctions.pushToLocalStorage();
 }
 
@@ -134,17 +160,28 @@ function refreshGraphs(event, location) {
 
 }
 
+
+
+
 var newBillButton = document.getElementById("nb");
 newBillButton.addEventListener("click", newBillEvent);
+
+
 
 var newRoommateButton = document.getElementById("nr");
 newRoommateButton.addEventListener("click", newRoommateEvent);
 
+
+
 var refreshButton = document.getElementById('refGraphs');
 refreshButton.addEventListener("click", refreshGraphs);
 
+
+
 var removeRoomateButton = document.getElementById('removeRoomateBbutton');
 removeRoomateButton.addEventListener('click', removeRoomate);
+
+
 
 var removeBillButton = document.getElementById('removeBillButton');
 removeBillButton.addEventListener('click', removeBill);

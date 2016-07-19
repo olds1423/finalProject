@@ -30,10 +30,13 @@
 
 		</nav>
 
-		<main>
+		<section id="butt">
+
+		</section>
+		<main id="main">
 			<form id='updateForm' method="post">
 
-				<h2 id="inptTntTitle">Input Rent Data</h2> <br>
+				<h2 id="inptTntTitle">Input Rent Data</h2>
 
 				<label for="monthName">Month:</label>
 				<select class='formSpot' id="monthName" name="monthName">
@@ -51,25 +54,25 @@
 					<option class='formSpot' value="december">December</option>
 				</select>
 
-					<label for="billName">Bill Name:</label>
-					<input class='formSpot' id='billName' type="text" name="billName" value="">
+				<label for="billName">Bill Name:</label>
+				<input class='formSpot' id='billName' type="text" name="billName" value="">
 
-					<label for="billAmount">Bill Amount:</label>
-					<input class='formSpot' id='billAmount' type="number" name="billAmount" value="" min="0">
+				<label for="billAmount">Bill Amount:</label>
+				<input class='formSpot' id='billAmount' type="number" name="billAmount" value="" min="0">
 
-					<label for="billFrequency">Bill Frequency:</label>
-					<select class='formSpot' id="billFrequency" name="monthName">
-						<option class='formSpot' value="n/a">Select</option>
-						<option class='formSpot' value="1">One time per month</option>
-						<option class='formSpot' value="2">Two times per month</option>
-						<option class='formSpot' value="3">Three times per month</option>
-						<option class='formSpot' value="4">Four times per month</option>
+				<label for="billFrequency">Bill Frequency:</label>
+				<select class='formSpot' id="billFrequency" name="monthName">
+					<option class='formSpot' value="n/a">Select</option>
+					<option class='formSpot' value="1">One time per month</option>
+					<option class='formSpot' value="2">Two times per month</option>
+					<option class='formSpot' value="3">Three times per month</option>
+					<option class='formSpot' value="4">Four times per month</option>
 
-					</select>
+				</select>
 
 
-					<label for="roommateName">New Roommate:</label>
-		      <input class='formSpot' id="newRoomate" type="text" name="roommateName" value="" >
+				<label for="roommateName">New Roommate:</label>
+	      <input class='formSpot' id="newRoomate" type="text" name="roommateName" value="" >
 
 
 
@@ -86,10 +89,10 @@
 
 				<section id='remRmmt'>
 					<select class='formSpot' id="selectedRoomate" name="remRmmt">
-						<input id='removeRoomateBbutton' type="submit" name="name" value="Remove Roomate">
+					</select>
+					<input id='removeRoomateBbutton' type="submit" name="name" value="Remove Roomate">
 				</section>
 
-				</select>
 			</section>
 
 			<section id="currentBills">
@@ -100,7 +103,7 @@
 
 				<section id='remBill'>
 					<select id="selectedBill" class='formSpot' name='remBill'></select>
-						<option id='butt' value="option">option</option>
+						<option id='option' value="option">option</option>
 
 					<input id='removeBillButton' type="submit" name="name" value="Remove Bill">
 				</section>
@@ -149,6 +152,6 @@
 		<script type="text/javascript" src='rand-color.js'></script>
 		<script type='text/javascript' src='eventHandler.js'></script>
 		<script type="text/javascript" src='app.js'></script>
-		<script type="text/javascript" src='statistics.js'></script>
+		<!-- <script type="text/javascript" src='statistics.js'></script> -->
 	</body>
 </html>

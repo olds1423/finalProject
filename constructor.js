@@ -14,6 +14,7 @@ var november = new Month('november');
 var december = new Month('december');
 
 function startUpCheckStorage() {
+
   var newBill = [];
   if (localStorage.storedBills) {
     var parsedBills = JSON.parse(localStorage.getItem('storedBills'));
@@ -22,7 +23,7 @@ function startUpCheckStorage() {
 			newBill.push(currentBill);
 			// new BillObject(each.billMonthName, each.billAmount, each.billFrequency, each.billName)
     }
-		console.log(newBill);
+
     for (var j = 0; j < newBill.length; j++) {
 			// console.log(newBill);
 			// console.log(item);
@@ -30,12 +31,14 @@ function startUpCheckStorage() {
     }
   }
   if (localStorage.storedBills) {
+
+
     for (var i = 0; i < allMonths.length; i++) {
       for (var j = 0; j < allMonths[i].billNameArray.length; j++) {
         // console.log(allMonths[i]);
         // console.log(allMonths[i].billObjectArray);
         var currentObject = allMonths[i].billObjectArray[j];
-				var parent = document.getElementById('selectedBill')
+				var billSelector = document.getElementById('selectedBill')
       	var billOption = document.createElement('option');
 				console.log(document.getElementById('selectedBill'));
 				console.log(billOption);
@@ -57,6 +60,7 @@ function startUpCheckStorage() {
 
 
 function Month(name){
+
   this.monthName = name;
   this.billObjectArray = [];
   this.billNameArray = [];
@@ -74,6 +78,8 @@ var helperFunctions = {
 
   addAllBills: function (object){
     object.totalRentAndBills += object.billAmount;  //update running total for all bills during each new instantiation
+
+
   },
 
   divideRentEvenly: function (object){
@@ -81,10 +87,14 @@ var helperFunctions = {
     for (each in object.roommateNameArray) {
       divisor += 1;
     }
+
     return this.totalRentAndBills /= divisor;
+
   },
 
   pushToLocalStorage: function() {
+
+
     var tempBillObjArray = [];
     for (var i = 0; i < allMonths.length; i++) {
       var billObjArr = allMonths[i].billObjectArray;
@@ -94,12 +104,16 @@ var helperFunctions = {
     }
     var strAllMonthsBillObjects = JSON.stringify(tempBillObjArray);
     localStorage.setItem('storedBills', strAllMonthsBillObjects);
+
+
   },
 
   doAllMethods: function (object){
     this.addAllBills(object);
     this.divideRentEvenly(object);
     return object.totalRentAndBills;
+
+
   },
 };
 
@@ -108,6 +122,8 @@ function BillObject(month, amount, frequency, bill) {   //bill constructor
   this.billAmount = parseInt(amount) || 0;
   this.billFrequency = parseInt(frequency) || 0;      //frequency inside of month
   this.billName = bill || '';
+
+
 }
 
 BillObject.prototype.findAndUpdateMonth = function () {
@@ -117,10 +133,15 @@ BillObject.prototype.findAndUpdateMonth = function () {
       allMonths[i].billNameArray.push(this.billName);
       allMonths[i].billAmountArray.push(this.billAmount);
       allMonths[i].grandTotal += this.billAmount;
+
+
     }
   }
 };
 
+
+
 startUpCheckStorage();
+
 
 //end
