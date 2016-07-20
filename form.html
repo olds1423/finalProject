@@ -30,9 +30,7 @@
 
 		</nav>
 
-		<section id="butt">
 
-		</section>
 		<main id="main">
 			<form id='updateForm' method="post">
 
@@ -103,7 +101,6 @@
 
 				<section id='remBill'>
 					<select id="selectedBill" class='formSpot' name='remBill'></select>
-						<option id='option' value="option">option</option>
 
 					<input id='removeBillButton' type="submit" name="name" value="Remove Bill">
 				</section>
@@ -138,20 +135,23 @@
 			</section>
 
 			<section id="formGraphs">
-				<div>
-						<canvas id="graph1" width="300" height="300"></canvas>
+				<div id="graphDiv1">
+						<canvas id="graph1"></canvas>
 				</div>
-				<div>
-					<canvas id="graph2" width="300" height="300"></canvas>
+				<div id="graphDiv2">
+					<canvas id="graph2"></canvas>
 				</div>
 			</section>
 
 		</section>
 
-		<script type='text/javascript' src='constructor.js'></script>
+		<!-- <script type='text/javascript' src='constructor.js'></script> -->
 		<script type="text/javascript" src='rand-color.js'></script>
-		<script type='text/javascript' src='eventHandler.js'></script>
-		<script type="text/javascript" src='app.js'></script>
+		<script type='text/javascript' src='librarian.js'></script>
+		<script type='text/javascript' src='form.js'></script>
+
+		<!-- <script type='text/javascript' src='eventHandler.js'></script>
+		<script type="text/javascript" src='app.js'></script> -->
 		<!-- <script type="text/javascript" src='statistics.js'></script> -->
 	</body>
 </html>

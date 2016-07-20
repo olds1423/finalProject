@@ -303,6 +303,14 @@ a:hover{
 	border: 2px solid rgba(166, 43, 39, 1);
 }
 
+#graph1{
+	width: 300px;
+	height: 300px;
+}
+#graph2{
+	width: 300px;
+	height: 300px;
+}
 #longTermGaphs{}
 .statsPageGraphs{
 	display: flex;
