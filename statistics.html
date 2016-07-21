@@ -32,32 +32,12 @@
 			<section class='statsPageGraphs' id="graphSection1">
 
 				<section id="controls">
-
-					<input id='refGraphs' type="submit" value="Refresh Graphs">
-
-					<select id="whichGraph" name="whichGraph">
-						<option class='formSpot' value="january">January</option>
-						<option class='formSpot' value="february">February</option>
-						<option class='formSpot' value="march">March</option>
-						<option class='formSpot' value="april">April</option>
-						<option class='formSpot' value="may">May</option>
-						<option class='formSpot' value="june">June</option>
-						<option class='formSpot' value="july">July</option>
-						<option class='formSpot' value="august">August</option>
-						<option class='formSpot' value="september">September</option>
-						<option class='formSpot' value="october">October</option>
-						<option class='formSpot' value="november">November</option>
-						<option class='formSpot' value="december">December</option>
-					</select>
-
+					<input id='refGraphs1' type="submit" value="Refresh Graphs">
 				</section>
 
 				<section id="formGraphs">
-					<div>
-							<canvas id="graph1" width="300" height="300"></canvas>
-					</div>
-					<div>
-						<canvas id="graph2" width="300" height="300"></canvas>
+					<div id="graphDiv1">
+							<canvas id="billTotalsGraph" width="300" height="300"></canvas>
 					</div>
 				</section>
 
@@ -66,9 +46,9 @@
 
 				<section id="controls">
 
-					<input id='refGraphs' type="submit" value="Refresh Graphs">
+					<input id='refGraphs2' type="submit" value="Refresh Graphs">
 
-					<select id="whichGraph" name="whichGraph">
+					<select id="whichGraph2" name="whichBill">
 						<option class='formSpot' value="january">January</option>
 						<option class='formSpot' value="february">February</option>
 						<option class='formSpot' value="march">March</option>
@@ -82,56 +62,26 @@
 						<option class='formSpot' value="november">November</option>
 						<option class='formSpot' value="december">December</option>
 					</select>
+					<input id="howManyMates" class='formSpot'  type="number" name="numberOfMates" placeholder="Enter Roommate Total" value="" min="0" required="">
 
 				</section>
-
 				<section id="formGraphs">
-					<div>
-							<canvas id="graph1" width="300" height="300"></canvas>
-					</div>
-					<div>
-						<canvas id="graph2" width="300" height="300"></canvas>
+					<div id="graphDiv2">
+						<canvas id="roomateGraph" width="300" height="300"></canvas>
 					</div>
 				</section>
 
 			</section>
-			<section class='statsPageGraphs' id="graphSection3">
 
-				<section id="controls">
-
-					<input id='refGraphs' type="submit" value="Refresh Graphs">
-
-					<select id="whichGraph" name="whichGraph">
-						<option class='formSpot' value="january">January</option>
-						<option class='formSpot' value="february">February</option>
-						<option class='formSpot' value="march">March</option>
-						<option class='formSpot' value="april">April</option>
-						<option class='formSpot' value="may">May</option>
-						<option class='formSpot' value="june">June</option>
-						<option class='formSpot' value="july">July</option>
-						<option class='formSpot' value="august">August</option>
-						<option class='formSpot' value="september">September</option>
-						<option class='formSpot' value="october">October</option>
-						<option class='formSpot' value="november">November</option>
-						<option class='formSpot' value="december">December</option>
-					</select>
-
-				</section>
-
-				<section id="formGraphs">
-					<div>
-							<canvas id="graph1" width="300" height="300"></canvas>
-					</div>
-					<div>
-						<canvas id="graph2" width="300" height="300"></canvas>
-					</div>
-				</section>
-
-			</section>
 
 		</section>
 		<script type="text/javascript" src='rand-color.js'></script>
-		<script type='text/javascript' src='constructor.js'></script>
-		<script type='text/javascript' src='eventHandler.js'></script>
-		<script type="text/javascript" src='app.js'></script>	</body>
+		<script type='text/javascript' src='librarian.js'></script>
+		<script type="text/javascript" src='stats.js'></script>
+		<!-- <script type='text/javascript' src='eventHandler.js'></script> -->
+		<!-- <script type='text/javascript' src='constructor.js'></script>
+		<script type="text/javascript" src='app.js'></script>
+		<script type="text/javascript" src="statistics.js"></script> -->
+	</body>
+
 </html>

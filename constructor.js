@@ -14,22 +14,53 @@ var november = new Month('november');
 var december = new Month('december');
 
 function startUpCheckStorage() {
-  var tempParsedBillObject = [];
+
+  var newBill = [];
   if (localStorage.storedBills) {
     var parsedBills = JSON.parse(localStorage.getItem('storedBills'));
-    for (var i = 0; i < parsedBills.length; i++) {
-      tempParsedBillObject.push(new BillObject(parsedBills[i].billMonthName, parsedBills[i].billAmount, parsedBills[i].billFrequency, parsedBills[i].billName));
+    for (var i = 0; i < parsedBills.length; i++){
+			var currentBill = new BillObject(parsedBills[i].billMonthName, parsedBills[i].billAmount, parsedBills[i].billFrequency, parsedBills[i].billName);
+			newBill.push(currentBill);
+			// new BillObject(each.billMonthName, each.billAmount, each.billFrequency, each.billName)
     }
-    // for (var j = 0; j < tempParsedBillObject.length; j++) {
-    //   tempParsedBillObject[j].findAndUpdateMonth();
-    //   console.log(tempParsedBillObject[j].BillObject);
-    // }
+
+    for (var j = 0; j < newBill.length; j++) {
+			// console.log(newBill);
+			// console.log(item);
+      newBill[j].findAndUpdateMonth();
+    }
+  }
+  if (localStorage.storedBills) {
+
+
+    for (var i = 0; i < allMonths.length; i++) {
+      for (var j = 0; j < allMonths[i].billNameArray.length; j++) {
+        // console.log(allMonths[i]);
+        // console.log(allMonths[i].billObjectArray);
+        var currentObject = allMonths[i].billObjectArray[j];
+				var billSelector = document.getElementById('selectedBill')
+      	var billOption = document.createElement('option');
+				console.log(document.getElementById('selectedBill'));
+				console.log(billOption);
+      	billOption.value = currentObject.billName;
+      	billOption.textContent = currentObject.billName + " - " + currentObject.billMonthName;
+      	billOption.id = currentObject.billName;
+      	billSelector.appendChild(billOption);
+
+
+        var currentBillsList = document.getElementById("billList");
+        var newListItem = document.createElement("li");
+        newListItem.textContent = currentObject.billName + " $" + currentObject.billAmount + " - " + currentObject.billMonthName;
+        newListItem.id = currentObject.billName + '-li';
+        currentBillsList.appendChild(newListItem);
+      }
+    }
   }
 }
-startUpCheckStorage();
 
 
 function Month(name){
+
   this.monthName = name;
   this.billObjectArray = [];
   this.billNameArray = [];
@@ -47,6 +78,8 @@ var helperFunctions = {
 
   addAllBills: function (object){
     object.totalRentAndBills += object.billAmount;  //update running total for all bills during each new instantiation
+
+
   },
 
   divideRentEvenly: function (object){
@@ -54,10 +87,14 @@ var helperFunctions = {
     for (each in object.roommateNameArray) {
       divisor += 1;
     }
+
     return this.totalRentAndBills /= divisor;
+
   },
 
   pushToLocalStorage: function() {
+
+
     var tempBillObjArray = [];
     for (var i = 0; i < allMonths.length; i++) {
       var billObjArr = allMonths[i].billObjectArray;
@@ -67,12 +104,16 @@ var helperFunctions = {
     }
     var strAllMonthsBillObjects = JSON.stringify(tempBillObjArray);
     localStorage.setItem('storedBills', strAllMonthsBillObjects);
+
+
   },
 
   doAllMethods: function (object){
     this.addAllBills(object);
     this.divideRentEvenly(object);
     return object.totalRentAndBills;
+
+
   },
 };
 
@@ -81,6 +122,8 @@ function BillObject(month, amount, frequency, bill) {   //bill constructor
   this.billAmount = parseInt(amount) || 0;
   this.billFrequency = parseInt(frequency) || 0;      //frequency inside of month
   this.billName = bill || '';
+
+
 }
 
 BillObject.prototype.findAndUpdateMonth = function () {
@@ -90,8 +133,15 @@ BillObject.prototype.findAndUpdateMonth = function () {
       allMonths[i].billNameArray.push(this.billName);
       allMonths[i].billAmountArray.push(this.billAmount);
       allMonths[i].grandTotal += this.billAmount;
+
+
     }
   }
 };
+
+
+
+startUpCheckStorage();
+
 
 //end

@@ -243,7 +243,6 @@ a:hover{
 	padding: 2px;
 	box-sizing: border-box;
 }
-#currentBills{}
 #billList{
 	list-style: none;
 	color: white;
@@ -304,6 +303,14 @@ a:hover{
 	border: 2px solid rgba(166, 43, 39, 1);
 }
 
+#graph1{
+	width: 300px;
+	height: 300px;
+}
+#graph2{
+	width: 300px;
+	height: 300px;
+}
 #longTermGaphs{}
 .statsPageGraphs{
 	display: flex;
@@ -320,8 +327,14 @@ a:hover{
 	border-radius: 10px;
 }
 
-
-
+#billTotalsGraph{
+	width: 500px;
+	height: 500px;
+}
+#roomateGraph{
+	width: 500px;
+	height: 500px;
+}
 
 
 
