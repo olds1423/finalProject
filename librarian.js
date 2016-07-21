@@ -1,12 +1,13 @@
 // Global variables
 var allMonths = [];
-
+var billOptions = ["Placeholder"];
 // Constructors
 function BillObject(month, amount, frequency, bill) {   //bill constructor
   this.billMonthName = month || '';
   this.billAmount = parseInt(amount) || 0;
   this.billFrequency = parseInt(frequency) || 0;      //frequency inside of month
   this.billName = bill || '';
+
 
 
 }
@@ -58,6 +59,9 @@ var helperFunctions = {
 
 
     var tempBillObjArray = [];
+    var allRoommates = {
+
+    }
     for (var i = 0; i < allMonths.length; i++) {
       var billObjArr = allMonths[i].billObjectArray;
       for (var j = 0; j < allMonths[i].billObjectArray.length; j++) {
@@ -65,7 +69,10 @@ var helperFunctions = {
       }
     }
     var strAllMonthsBillObjects = JSON.stringify(tempBillObjArray);
-    localStorage.setItem('storedBills', strAllMonthsBillObjects);
+    localStorage.setItem("storedBills", strAllMonthsBillObjects);
+
+    var strBillOptions = JSON.stringify(billOptions);
+    localStorage.setItem("storedBillOptions", strBillOptions);
 
 
   },

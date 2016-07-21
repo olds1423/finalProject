@@ -44,10 +44,15 @@ function buildGraphs2(event) {
   event.preventDefault();
   var dataArray = [];
   var object = document.getElementById("whichGraph2").value;
-  var roommateTotal = parseInt(document.getElementById("howManyMates").value);
-  for (var i = 0; i < allMonths.length; i++) {
-    dataArray[i] = allMonths[i].grandTotal / roommateTotal;
-  }
+	console.log(object);
+  // var roommateTotal = parseInt(document.getElementById("howManyMates").value);
+  // for (var i = 0; i < allMonths.length; i++) {
+  //   dataArray[i] = allMonths[i].grandTotal / roommateTotal;
+  // }
+	for (var i = 0; i < allMonths.length; i++) {
+		allMonths[i].billObjectArray
+		}
+	}
   var BarData2 = {
      labels: allMonthsForReference,
      datasets: [

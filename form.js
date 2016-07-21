@@ -8,6 +8,12 @@ function newBillEvent(event){
   var currentBillsList = document.getElementById("billList");
   var currentMonth = document.getElementById("monthName");
   var billFrequency = document.getElementById("billFrequency");
+  console.log(inputBillName.value.toLowerCase());
+  console.log(billOptions);
+  var inputBillNameOption = inputBillName.value.toLowerCase();
+  if (inputBillNameOption === billOptions.indexOf || inputBillName.value !== null) {
+    billOptions.push(inputBillNameOption);
+  }
   var bill = new BillObject(currentMonth.value, inputBillAmount.value, billFrequency.value, inputBillName.value);
   bill.findAndUpdateMonth();
 
