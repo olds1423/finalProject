@@ -8,6 +8,12 @@ function newBillEvent(event){
   var currentBillsList = document.getElementById("billList");
   var currentMonth = document.getElementById("monthName");
   var billFrequency = document.getElementById("billFrequency");
+  // console.log(inputBillName.value.toLowerCase());
+  // console.log(billOptions);
+  // var inputBillNameOption = inputBillName.value.toLowerCase();
+  // if (inputBillNameOption === billOptions.indexOf || inputBillName.value !== null) {
+  //   billOptions.push(inputBillNameOption);
+  // }
   var bill = new BillObject(currentMonth.value, inputBillAmount.value, billFrequency.value, inputBillName.value);
   bill.findAndUpdateMonth();
 
@@ -152,7 +158,22 @@ function refreshGraphs(event, location) {
 	for (var i = 0; i < allMonths.length; i++) {
 		if(targetMonth.value === allMonths[i].monthName){
 
+			var parent = document.getElementById('graphDiv1');
+			var child = document.getElementById('graph1');
+			parent.removeChild(child);
+
+			child = document.createElement('canvas');
+			child.id = 'graph1';
+			parent.appendChild(child);
 			makeBarChart(allMonths[i], 1);
+
+			var parent = document.getElementById('graphDiv2');
+			var child = document.getElementById('graph2');
+			parent.removeChild(child);
+
+			child = document.createElement('canvas');
+			child.id = 'graph2';
+			parent.appendChild(child);
 			makeDoughnutChart(allMonths[i], 2);
 		}
 	}
@@ -160,28 +181,20 @@ function refreshGraphs(event, location) {
 
 }
 
-
+startUpCheckStorage();
 
 
 var newBillButton = document.getElementById("nb");
 newBillButton.addEventListener("click", newBillEvent);
 
-
-
 var newRoommateButton = document.getElementById("nr");
 newRoommateButton.addEventListener("click", newRoommateEvent);
-
-
 
 var refreshButton = document.getElementById('refGraphs');
 refreshButton.addEventListener("click", refreshGraphs);
 
-
-
 var removeRoomateButton = document.getElementById('removeRoomateBbutton');
 removeRoomateButton.addEventListener('click', removeRoomate);
-
-
 
 var removeBillButton = document.getElementById('removeBillButton');
 removeBillButton.addEventListener('click', removeBill);

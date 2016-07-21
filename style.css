@@ -35,11 +35,6 @@ main{
 
 	box-sizing: border-box;
 }
-article{}
-section{}
-nav{}
-form{}
-canvas{}
 label{
 	margin: 5px;
 	font-size: 20px;
@@ -58,8 +53,6 @@ input{
 	font-size: 20px;
 	padding: 2px;
 	box-sizing: border-box;
-
-
 }
 select{
 	background-color: rgba(59, 91, 105, .8);
@@ -74,13 +67,6 @@ select{
 	box-sizing: border-box;
 
 }
-
-ul{}
-li{}
-h1{}
-h2{}
-h3{}
-p{}
 a{
 	color: white;
 	text-decoration: none;
@@ -173,12 +159,10 @@ a:hover{
 	padding: 2px;
 	box-sizing: border-box;
 }
-#currentRoommates{}
 #remRmmt{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 }
 #remove-roomate-button:hover{
 	background-color: rgba(186, 171, 130, .7);
@@ -208,12 +192,6 @@ a:hover{
 	flex-direction: column;
 	align-items: flex-start;
 }
-#month{}
-#roommateName{}
-#newRoomate{}
-#billName{}
-#billAmount{}
-#newBill{}
 #monthName{
 	margin: 5px;
 	font-size: 20px;
@@ -243,7 +221,6 @@ a:hover{
 #nb{
 	width: 100px;
 }
-#currentRoommates{}
 #roommateList{
 	list-style: none;
 	color: white;
@@ -266,7 +243,6 @@ a:hover{
 	padding: 2px;
 	box-sizing: border-box;
 }
-#currentBills{}
 #billList{
 	list-style: none;
 	color: white;
@@ -327,6 +303,14 @@ a:hover{
 	border: 2px solid rgba(166, 43, 39, 1);
 }
 
+#graph1{
+	width: 300px;
+	height: 300px;
+}
+#graph2{
+	width: 300px;
+	height: 300px;
+}
 #longTermGaphs{}
 .statsPageGraphs{
 	display: flex;
@@ -342,16 +326,15 @@ a:hover{
 	border: 3px solid rgba(180, 35, 35, 1);
 	border-radius: 10px;
 }
-#graph1{}
-#graph2{}
-#graph3{}
-#graph4{}
-#graph5{}
-#graph6{}
-#graph7{}
-#graph8{}
 
-
+#billTotalsGraph{
+	width: 500px;
+	height: 500px;
+}
+#roomateGraph{
+	width: 500px;
+	height: 500px;
+}
 
 
 

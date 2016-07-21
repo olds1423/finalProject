@@ -50,13 +50,6 @@ function makeBarChart(object, placement) {
   });
 }
 
-// function makeGraphs() {
-// 	for (var i = 0; i < monthObjectArray.length; i++) {
-// 		makeDoughnutChart(monthObjectArray[i], i);
-// 		makeBarChart(monthObjectArray[i], i);
-// 	}
-// }
-
 function main(){
 	makeBarChart(allMonths[0], 1);
   makeDoughnutChart(allMonths[0], 2);
@@ -76,3 +69,5 @@ function main(){
 
 
 // end
+
+//By Thor's Hammer we shall deploy!
