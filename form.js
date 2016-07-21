@@ -181,22 +181,14 @@ startUpCheckStorage();
 var newBillButton = document.getElementById("nb");
 newBillButton.addEventListener("click", newBillEvent);
 
-
-
 var newRoommateButton = document.getElementById("nr");
 newRoommateButton.addEventListener("click", newRoommateEvent);
-
-
 
 var refreshButton = document.getElementById('refGraphs');
 refreshButton.addEventListener("click", refreshGraphs);
 
-
-
 var removeRoomateButton = document.getElementById('removeRoomateBbutton');
 removeRoomateButton.addEventListener('click', removeRoomate);
-
-
 
 var removeBillButton = document.getElementById('removeBillButton');
 removeBillButton.addEventListener('click', removeBill);

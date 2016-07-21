@@ -19,7 +19,7 @@ BillObject.prototype.findAndUpdateMonth = function () {
       allMonths[i].billAmountArray.push(this.billAmount);
       allMonths[i].grandTotal += this.billAmount;
 
-
+			console.log(allMonths[i] + ': ' + allMonths[i].grandTotal);
     }
   }
 };
@@ -91,8 +91,7 @@ function startUpCheckStorage() {
     }
 
     for (var j = 0; j < newBill.length; j++) {
-			// console.log(newBill);
-			// console.log(item);
+
       newBill[j].findAndUpdateMonth();
     }
   }
@@ -101,13 +100,11 @@ function startUpCheckStorage() {
 
     for (var i = 0; i < allMonths.length; i++) {
       for (var j = 0; j < allMonths[i].billNameArray.length; j++) {
-        // console.log(allMonths[i]);
-        // console.log(allMonths[i].billObjectArray);
+
         var currentObject = allMonths[i].billObjectArray[j];
 				var billSelector = document.getElementById('selectedBill')
       	var billOption = document.createElement('option');
-				console.log(document.getElementById('selectedBill'));
-				console.log(billOption);
+
       	billOption.value = currentObject.billName;
       	billOption.textContent = currentObject.billName + " - " + currentObject.billMonthName;
       	billOption.id = currentObject.billName;
@@ -125,7 +122,7 @@ function startUpCheckStorage() {
 }
 
 function makeDoughnutChart(object, placement) {
-	
+
 	var dataArray = [];
   for (var i = 0; i < object.billObjectArray.length; i++) {
     dataArray[i] = object.billAmountArray[i] / object.roommateNameArray.length;

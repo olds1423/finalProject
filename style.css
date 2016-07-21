@@ -327,8 +327,14 @@ a:hover{
 	border-radius: 10px;
 }
 
-
-
+#billTotalsGraph{
+	width: 500px;
+	height: 500px;
+}
+#roomateGraph{
+	width: 500px;
+	height: 500px;
+}
 
 
 
