@@ -42,19 +42,24 @@ function buildGraphs1(event){
 
 function buildGraphs2(event) {
   event.preventDefault();
+
   var dataArray = [];
+	var labelArray = [];
   var object = document.getElementById("whichGraph2").value;
-	console.log(object);
-  // var roommateTotal = parseInt(document.getElementById("howManyMates").value);
-  // for (var i = 0; i < allMonths.length; i++) {
-  //   dataArray[i] = allMonths[i].grandTotal / roommateTotal;
-  // }
+	var numMates = document.getElementById('howManyMates').value;
+	console.log(numMates);
+
 	for (var i = 0; i < allMonths.length; i++) {
-		allMonths[i].billObjectArray
+		if (allMonths[i].monthName === object) {
+			for (var j = 0; j < allMonths.length; j++) {
+				labelArray[j] = allMonths[i].billNameArray[j];
+				dataArray[j] = allMonths[i].billAmountArray[j];
+				dataArray[j] /= numMates;
+			}
 		}
 	}
   var BarData2 = {
-     labels: allMonthsForReference,
+     labels: labelArray,
      datasets: [
        {
          data: dataArray,
